@@ -95,25 +95,6 @@ const Footer: React.FC = () => {
                     </svg>
                   </a>
                   <a
-                    href={SOCIAL_MEDIA.facebook}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-text-light hover:text-pink transition-colors"
-                  >
-                    <svg
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                    </svg>
-                  </a>
-                  <a
                     href={CONTACT_INFO.whatsappLink}
                     target="_blank"
                     rel="noopener noreferrer"
