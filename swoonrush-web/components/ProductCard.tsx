@@ -4,6 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+
 import { Product } from '@/constants';
 import { formatPrice } from '@/utils/formatPrice';
 
@@ -12,7 +13,10 @@ interface ProductCardProps {
   delay?: number;
 }
 
-export default function ProductCard({ product, delay = 0 }: ProductCardProps) {
+const ProductCard: React.FC<ProductCardProps> = ({
+  product,
+  delay = 0,
+}: ProductCardProps) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -46,7 +50,9 @@ export default function ProductCard({ product, delay = 0 }: ProductCardProps) {
 
         {/* Product Info */}
         <div className="flex flex-col items-center text-center">
-          <p className="text-text-light text-xs font-medium tracking-widest uppercase mb-1">{product.category?.replace('-', ' ')}</p>
+          <p className="text-text-light text-xs font-medium tracking-widest uppercase mb-1">
+            {product.category?.replace('-', ' ')}
+          </p>
           <h3 className="text-lg font-display font-semibold text-text-dark group-hover:text-pink transition-colors line-clamp-1">
             {product.name}
           </h3>
@@ -57,4 +63,6 @@ export default function ProductCard({ product, delay = 0 }: ProductCardProps) {
       </Link>
     </motion.div>
   );
-}
+};
+
+export default ProductCard;

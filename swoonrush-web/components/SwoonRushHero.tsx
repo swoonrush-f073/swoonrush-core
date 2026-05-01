@@ -4,10 +4,13 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Shirt, Sparkles, Users, Heart } from 'lucide-react';
-import { HERO_CONTENT } from '@/constants';
+import { Heart, Shirt, Sparkles, Users } from 'lucide-react';
 
-export default function SwoonRushHero() {
+import { HERO_CONTENT, HERO_EXTRA_CONTENT } from '@/constants';
+
+const HERO_IMAGE_URL = 'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/hero-models.png';
+
+const SwoonRushHero: React.FC = () => {
   return (
     <section className="min-h-screen bg-beige pt-16 pb-8 px-4 sm:px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto">
@@ -57,7 +60,7 @@ export default function SwoonRushHero() {
         >
           <div className="relative h-64 sm:h-80 md:h-96 bg-gradient-to-b from-transparent to-beige-dark/20 rounded-3xl overflow-hidden flex items-center justify-center">
             <Image
-              src="/products/hero-models.png"
+              src={HERO_IMAGE_URL}
               alt="K-Drama inspired fashion models"
               fill
               className="object-contain object-bottom"
@@ -73,7 +76,7 @@ export default function SwoonRushHero() {
             className="absolute -right-4 top-1/4 sm:right-4 sm:top-1/3 bg-white rounded-full p-4 shadow-xl max-w-[140px] text-center"
           >
             <p className="text-xs sm:text-sm text-text-dark font-medium leading-tight">
-              Inspired by the stories we love ❤️
+              {HERO_EXTRA_CONTENT.floatingBadge}
             </p>
           </motion.div>
         </motion.div>
@@ -91,7 +94,7 @@ export default function SwoonRushHero() {
                 <Shirt className="text-pink" size={24} />
               </div>
               <p className="text-xs sm:text-sm font-medium text-text-dark">
-                Premium Cotton
+                {HERO_EXTRA_CONTENT.features.feature1}
               </p>
             </div>
             <div className="flex flex-col items-center text-center gap-2">
@@ -99,7 +102,7 @@ export default function SwoonRushHero() {
                 <Sparkles className="text-pink" size={24} />
               </div>
               <p className="text-xs sm:text-sm font-medium text-text-dark">
-                Exclusive Designs
+                {HERO_EXTRA_CONTENT.features.feature2}
               </p>
             </div>
             <div className="flex flex-col items-center text-center gap-2">
@@ -107,7 +110,7 @@ export default function SwoonRushHero() {
                 <Users className="text-pink" size={24} />
               </div>
               <p className="text-xs sm:text-sm font-medium text-text-dark">
-                Unisex Fit
+                {HERO_EXTRA_CONTENT.features.feature3}
               </p>
             </div>
             <div className="flex flex-col items-center text-center gap-2">
@@ -115,7 +118,7 @@ export default function SwoonRushHero() {
                 <Heart className="text-pink" size={24} />
               </div>
               <p className="text-xs sm:text-sm font-medium text-text-dark">
-                Perfect for Fans
+                {HERO_EXTRA_CONTENT.features.feature4}
               </p>
             </div>
           </div>
@@ -123,4 +126,6 @@ export default function SwoonRushHero() {
       </div>
     </section>
   );
-}
+};
+
+export default SwoonRushHero;

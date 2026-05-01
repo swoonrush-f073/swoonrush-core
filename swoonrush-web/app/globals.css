@@ -14,16 +14,21 @@ html {
 }
 
 body {
-  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  font-family:
+    var(--font-inter),
+    system-ui,
+    -apple-system,
+    sans-serif;
   color: #2d2d2d;
-  background-color: #F7F5F3;
+  background-color: #f7f5f3;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 /* Smooth transitions */
-a, button {
+a,
+button {
   transition: all 0.3s ease;
 }
 
@@ -42,7 +47,7 @@ img {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #E89CA9;
+  background: #e89ca9;
   border-radius: 4px;
 }
 

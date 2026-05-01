@@ -1,16 +1,20 @@
 import React from 'react';
-import { PRODUCTS, CONTACT_INFO } from '@/constants';
-import { notFound } from 'next/navigation';
-import ProductGallery from '@/components/ProductGallery';
-import SizeSelector from '@/components/SizeSelector';
-import { formatPrice } from '@/utils/formatPrice';
-import { MessageCircle } from 'lucide-react';
 import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
+import { MessageCircle } from 'lucide-react';
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+import ProductGallery from '@/components/ProductGallery';
+import { CONTACT_INFO, PRODUCT_DETAIL_CONTENT, PRODUCTS } from '@/constants';
+import { formatPrice } from '@/utils/formatPrice';
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
   const { slug } = await params;
-  const product = PRODUCTS.find(p => p.slug === slug);
-  
+  const product = PRODUCTS.find((p) => p.slug === slug);
+
   if (!product) return {};
 
   return {
@@ -28,16 +32,23 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function ProductPage({ params }: { params: { slug: string } }) {
+export default async function ProductPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const { slug } = await params;
-  const product = PRODUCTS.find(p => p.slug === slug);
+  const product = PRODUCTS.find((p) => p.slug === slug);
 
   if (!product) {
     notFound();
   }
 
   const whatsappMessage = encodeURIComponent(
-    `Hi! I'm interested in the ${product.name}. Can you help me place an order?`
+    PRODUCT_DETAIL_CONTENT.whatsappMessageTemplate.replace(
+      '{productName}',
+      product.name,
+    ),
   );
   const whatsappUrl = `https://wa.me/${CONTACT_INFO.whatsapp}?text=${whatsappMessage}`;
 
@@ -68,27 +79,38 @@ export default async function ProductPage({ params }: { params: { slug: string }
 
             <div className="space-y-4 mb-8">
               <div className="flex text-sm">
-                <span className="font-medium text-text-dark w-24">Material:</span>
+                <span className="font-medium text-text-dark w-24">
+                  {PRODUCT_DETAIL_CONTENT.labels.material}
+                </span>
                 <span className="text-text-light">{product.material}</span>
               </div>
               <div className="flex text-sm">
-                <span className="font-medium text-text-dark w-24">Fit:</span>
+                <span className="font-medium text-text-dark w-24">
+                  {PRODUCT_DETAIL_CONTENT.labels.fit}
+                </span>
                 <span className="text-text-light">{product.fit}</span>
               </div>
             </div>
 
             {/* Colors */}
             <div className="mb-6">
-              <h4 className="text-sm font-medium text-text-dark mb-3">Available Colors</h4>
+              <h4 className="text-sm font-medium text-text-dark mb-3">
+                {PRODUCT_DETAIL_CONTENT.labels.availableColors}
+              </h4>
               <div className="flex gap-3">
                 {product.colors.map((color) => (
-                  <div key={color.name} className="flex flex-col items-center gap-1">
-                    <div 
+                  <div
+                    key={color.name}
+                    className="flex flex-col items-center gap-1"
+                  >
+                    <div
                       className="w-8 h-8 rounded-full border border-beige-dark shadow-sm"
                       style={{ backgroundColor: color.hex }}
                       title={color.name}
                     />
-                    <span className="text-[10px] text-text-light">{color.name}</span>
+                    <span className="text-[10px] text-text-light">
+                      {color.name}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -98,10 +120,15 @@ export default async function ProductPage({ params }: { params: { slug: string }
 
             {/* The rest is client side sizing but we skip logic for static view */}
             <div className="mb-8 opacity-70 pointer-events-none">
-              <p className="text-xs text-text-light mb-2">Size Selection (Example UI)</p>
+              <p className="text-xs text-text-light mb-2">
+                {PRODUCT_DETAIL_CONTENT.labels.sizeSelectionEx}
+              </p>
               <div className="grid grid-cols-5 gap-2">
                 {product.sizes.map((s) => (
-                  <div key={s} className="py-2 text-center border border-beige-dark rounded-md text-sm">
+                  <div
+                    key={s}
+                    className="py-2 text-center border border-beige-dark rounded-md text-sm"
+                  >
                     {s}
                   </div>
                 ))}
@@ -112,40 +139,40 @@ export default async function ProductPage({ params }: { params: { slug: string }
             <div className="flex flex-col gap-4 mt-auto">
               {!product.inStock && (
                 <div className="bg-gray-100 text-gray-600 font-medium py-4 text-center rounded-xl mb-2">
-                  Currently Out of Stock
+                  {PRODUCT_DETAIL_CONTENT.labels.outOfStock}
                 </div>
               )}
-              
+
               <a
                 href={product.inStock ? whatsappUrl : '#'}
-                target={product.inStock ? "_blank" : undefined}
+                target={product.inStock ? '_blank' : undefined}
                 rel="noopener noreferrer"
                 className={`flex items-center justify-center gap-2 py-4 rounded-xl font-medium transition-all duration-300 shadow-md ${
-                  product.inStock 
-                    ? 'bg-pink hover:bg-pink-dark text-white hover:shadow-lg hover:scale-[1.02]' 
+                  product.inStock
+                    ? 'bg-pink hover:bg-pink-dark text-white hover:shadow-lg hover:scale-[1.02]'
                     : 'bg-beige-dark text-text-light cursor-not-allowed'
                 }`}
               >
                 <MessageCircle size={20} />
-                Order via WhatsApp
+                {PRODUCT_DETAIL_CONTENT.labels.orderViaWhatsapp}
               </a>
-              
+
               <a
                 href="/contact"
                 className="flex items-center justify-center gap-2 py-4 rounded-xl font-medium transition-all duration-300 bg-white border-2 border-beige-dark text-text-dark hover:border-pink hover:text-pink"
               >
-                Inquire via Form
+                {PRODUCT_DETAIL_CONTENT.labels.inquireViaForm}
               </a>
             </div>
 
             <div className="mt-8 text-sm text-text-light">
               <p className="flex items-center gap-2 mb-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-green-500"></span>
-                Ships worldwide from our studio
+                {PRODUCT_DETAIL_CONTENT.shippingInfo.worldwide}
               </p>
               <p className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-beige-dark"></span>
-                Standard delivery 5-7 business days
+                {PRODUCT_DETAIL_CONTENT.shippingInfo.standard}
               </p>
             </div>
           </div>

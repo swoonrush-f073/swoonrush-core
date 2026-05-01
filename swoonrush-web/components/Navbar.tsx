@@ -3,9 +3,10 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { Menu, ShoppingBag } from 'lucide-react';
+
 import { NAV_LINKS } from '@/constants';
 
-export default function SwoonRushNavbar() {
+const SwoonRushNavbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
@@ -22,13 +23,16 @@ export default function SwoonRushNavbar() {
           </button>
 
           {/* Logo */}
-          <Link href="/" className="font-display text-xl sm:text-2xl font-bold tracking-wider text-text-dark">
+          <Link
+            href="/"
+            className="font-display text-xl sm:text-2xl font-bold tracking-wider text-text-dark"
+          >
             SWOONRUSH
           </Link>
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center space-x-8">
-            {NAV_LINKS.map(link => (
+            {NAV_LINKS.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
@@ -54,7 +58,7 @@ export default function SwoonRushNavbar() {
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white border-t border-beige-dark">
           <div className="px-4 py-4 space-y-3">
-            {NAV_LINKS.map(link => (
+            {NAV_LINKS.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
@@ -69,4 +73,6 @@ export default function SwoonRushNavbar() {
       )}
     </nav>
   );
-}
+};
+
+export default SwoonRushNavbar;

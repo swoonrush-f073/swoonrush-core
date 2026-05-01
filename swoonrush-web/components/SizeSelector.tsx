@@ -8,7 +8,11 @@ interface SizeSelectorProps {
   onSizeSelect: (size: string) => void;
 }
 
-export default function SizeSelector({ sizes, selectedSize, onSizeSelect }: SizeSelectorProps) {
+const SizeSelector: React.FC<SizeSelectorProps> = ({
+  sizes,
+  selectedSize,
+  onSizeSelect,
+}: SizeSelectorProps) => {
   return (
     <div className="mt-6">
       <div className="flex justify-between items-center mb-2">
@@ -34,4 +38,6 @@ export default function SizeSelector({ sizes, selectedSize, onSizeSelect }: Size
       </div>
     </div>
   );
-}
+};
+
+export default SizeSelector;

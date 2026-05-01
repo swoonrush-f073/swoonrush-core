@@ -32,12 +32,13 @@ export const PRODUCTS: Product[] = [
     id: '1',
     name: 'Crash Landing Comfort Tee',
     slug: 'crash-landing-comfort-tee',
-    description: 'Inspired by epic love stories. Soft, comfortable, and perfect for binge-watching your favorite series.',
+    description:
+      'Inspired by epic love stories. Soft, comfortable, and perfect for binge-watching your favorite series.',
     price: 34.99,
     currency: 'USD',
     images: {
-      front: '/products/crash-landing-tee/front.jpg',
-      back: '/products/crash-landing-tee/back.jpg',
+      front: 'https://github.com/swoonrush-f073/swoonrush-core/blob/main/swoonrush-web/public/products/crash-landing-tee/front.jpg',
+      back: 'https://github.com/swoonrush-f073/swoonrush-core/blob/main/swoonrush-web/public/products/crash-landing-tee/back.jpg',
     },
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
     colors: [
@@ -54,13 +55,14 @@ export const PRODUCTS: Product[] = [
     id: '2',
     name: 'Goblin Guardian Hoodie',
     slug: 'goblin-guardian-hoodie',
-    description: 'Stay cozy like you\'re wrapped in a K-Drama moment. Premium fleece with aesthetic graphics.',
+    description:
+      "Stay cozy like you're wrapped in a K-Drama moment. Premium fleece with aesthetic graphics.",
     price: 49.99,
     currency: 'USD',
     images: {
-      front: '/products/goblin-hoodie/front.jpg',
-      back: '/products/goblin-hoodie/back.jpg',
-      detail: '/products/goblin-hoodie/detail.jpg',
+      front: 'https://github.com/swoonrush-f073/swoonrush-core/blob/main/swoonrush-web/public/products/goblin-hoodie/front.jpg',
+      back: 'https://github.com/swoonrush-f073/swoonrush-core/blob/main/swoonrush-web/public/products/goblin-hoodie/back.jpg',
+      detail: 'https://github.com/swoonrush-f073/swoonrush-core/blob/main/swoonrush-web/public/products/goblin-hoodie/detail.jpg',
     },
     sizes: ['S', 'M', 'L', 'XL'],
     colors: [
@@ -77,17 +79,16 @@ export const PRODUCTS: Product[] = [
     id: '3',
     name: 'Itaewon Street Style Tee',
     slug: 'itaewon-street-style-tee',
-    description: 'Bold street style graphic tee inspired by the neon lights of Seoul nights.',
+    description:
+      'Bold street style graphic tee inspired by the neon lights of Seoul nights.',
     price: 36.99,
     currency: 'USD',
     images: {
-      front: '/products/itaewon-tee/front.jpg',
-      back: '/products/itaewon-tee/back.jpg',
+      front: 'https://github.com/swoonrush-f073/swoonrush-core/blob/main/swoonrush-web/public/products/itaewon-tee/front.jpg',
+      back: 'https://github.com/swoonrush-f073/swoonrush-core/blob/main/swoonrush-web/public/products/itaewon-tee/back.jpg',
     },
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-    colors: [
-      { name: 'Black', hex: '#000000' },
-    ],
+    colors: [{ name: 'Black', hex: '#000000' }],
     material: '100% Premium Cotton',
     fit: 'Unisex Oversized Fit',
     featured: true,
@@ -98,12 +99,13 @@ export const PRODUCTS: Product[] = [
     id: '4',
     name: 'Reply 1988 Vintage Tee',
     slug: 'reply-1988-vintage-tee',
-    description: 'A nostalgic retro vibe for the classic K-drama fans. Features a faded vintage print.',
+    description:
+      'A nostalgic retro vibe for the classic K-drama fans. Features a faded vintage print.',
     price: 32.99,
     currency: 'USD',
     images: {
-      front: '/products/reply-tee/front.jpg',
-      back: '/products/reply-tee/back.jpg',
+      front: 'https://github.com/swoonrush-f073/swoonrush-core/blob/main/swoonrush-web/public/products/reply-tee/front.jpg',
+      back: 'https://github.com/swoonrush-f073/swoonrush-core/blob/main/swoonrush-web/public/products/reply-tee/back.jpg',
     },
     sizes: ['S', 'M', 'L', 'XL'],
     colors: [
@@ -120,12 +122,13 @@ export const PRODUCTS: Product[] = [
     id: '5',
     name: 'Start-Up Minimalist Hoodie',
     slug: 'start-up-minimalist-hoodie',
-    description: 'Clean, simple, and ready for your next big idea. A minimalist essential.',
+    description:
+      'Clean, simple, and ready for your next big idea. A minimalist essential.',
     price: 44.99,
     currency: 'USD',
     images: {
-      front: '/products/startup-hoodie/front.jpg',
-      back: '/products/startup-hoodie/back.jpg',
+      front: 'https://github.com/swoonrush-f073/swoonrush-core/blob/main/swoonrush-web/public/products/startup-hoodie/front.jpg',
+      back: 'https://github.com/swoonrush-f073/swoonrush-core/blob/main/swoonrush-web/public/products/startup-hoodie/back.jpg',
     },
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
     colors: [
@@ -137,5 +140,5 @@ export const PRODUCTS: Product[] = [
     featured: false,
     inStock: true,
     category: 'patterns',
-  }
+  },
 ];

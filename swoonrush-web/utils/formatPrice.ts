@@ -3,6 +3,6 @@ export function formatPrice(price: number, currency: string = 'USD'): string {
     style: 'currency',
     currency: currency,
   });
-  
+
   return formatter.format(price);
 }

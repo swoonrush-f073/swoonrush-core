@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { motion, AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 
 interface ProductGalleryProps {
   images: {
@@ -14,14 +14,17 @@ interface ProductGalleryProps {
   alt: string;
 }
 
-export default function ProductGallery({ images, alt }: ProductGalleryProps) {
+const ProductGallery: React.FC<ProductGalleryProps> = ({
+  images,
+  alt,
+}: ProductGalleryProps) => {
   const [activeImage, setActiveImage] = useState(images.front);
-  
+
   const allImages = [
     images.front,
     images.back,
     images.detail,
-    images.lifestyle
+    images.lifestyle,
   ].filter(Boolean) as string[];
 
   return (
@@ -56,7 +59,9 @@ export default function ProductGallery({ images, alt }: ProductGalleryProps) {
               key={idx}
               onClick={() => setActiveImage(img)}
               className={`relative h-24 w-20 flex-shrink-0 rounded-lg overflow-hidden border-2 transition-all duration-200 ${
-                activeImage === img ? 'border-pink' : 'border-transparent opacity-70 hover:opacity-100'
+                activeImage === img
+                  ? 'border-pink'
+                  : 'border-transparent opacity-70 hover:opacity-100'
               }`}
             >
               <Image
@@ -71,4 +76,6 @@ export default function ProductGallery({ images, alt }: ProductGalleryProps) {
       )}
     </div>
   );
-}
+};
+
+export default ProductGallery;

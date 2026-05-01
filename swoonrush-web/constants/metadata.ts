@@ -1,7 +1,8 @@
 export const SITE_METADATA = {
   title: 'SwoonRush | Wear Your K-Drama Obsession',
   description: 'Trendy, aesthetic and made for every K-Drama lover.',
-  keywords: 't-shirts, clothing, fashion, kdrama, premium tees, graphic tees, swoonrush',
+  keywords:
+    't-shirts, clothing, fashion, kdrama, premium tees, graphic tees, swoonrush',
   author: 'SwoonRush',
   companyName: 'SwoonRush',
   brandName: 'SwoonRush',
@@ -17,7 +18,8 @@ export const HERO_CONTENT = {
   highlightedText: 'K-Drama',
   headingEnd: 'Obsession',
   subheading: 'Trendy, aesthetic and made for every K-Drama lover.',
-  description: 'Discover our handpicked collection of premium t-shirts made with the finest materials.',
+  description:
+    'Discover our handpicked collection of premium t-shirts made with the finest materials.',
   cta: {
     primary: 'Shop The Scene →',
     secondary: 'Contact Us',

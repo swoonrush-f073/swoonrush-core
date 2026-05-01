@@ -1,12 +1,14 @@
 'use client';
 
 import React from 'react';
-import SwoonRushHero from '@/components/SwoonRushHero';
+import Link from 'next/link';
+
 import ProductCard from '@/components/ProductCard';
-import { PRODUCTS, CONTACT_INFO } from '@/constants';
+import SwoonRushHero from '@/components/SwoonRushHero';
+import { CONTACT_INFO, HOME_PAGE_CONTENT, PRODUCTS } from '@/constants';
 
 export default function Home() {
-  const featuredProducts = PRODUCTS.filter(p => p.featured);
+  const featuredProducts = PRODUCTS.filter((p) => p.featured);
 
   return (
     <div>
@@ -18,10 +20,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-text-dark mb-4">
-              Our Collection
+              {HOME_PAGE_CONTENT.productsSection.title}
             </h2>
             <p className="text-text-light text-lg max-w-2xl mx-auto">
-              Discover K-Drama inspired fashion pieces that tell your story
+              {HOME_PAGE_CONTENT.productsSection.subtitle}
             </p>
           </div>
 
@@ -34,14 +36,14 @@ export default function Home() {
               />
             ))}
           </div>
-          
+
           <div className="mt-16 text-center">
-            <a
+            <Link
               href="/#products" // Or /products if there was a full catalog
               className="inline-flex items-center justify-center gap-2 border-2 border-beige-dark text-text-dark hover:border-pink hover:text-pink px-8 py-3 rounded-full font-medium transition-all duration-300"
             >
-              View All Styles
-            </a>
+              {HOME_PAGE_CONTENT.productsSection.viewAllBtn}
+            </Link>
           </div>
         </div>
       </section>
@@ -50,25 +52,25 @@ export default function Home() {
       <section className="py-20 bg-beige">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-text-dark mb-6">
-            Ready to Shop?
+            {HOME_PAGE_CONTENT.ctaSection.title}
           </h2>
           <p className="text-text-light text-lg mb-10 max-w-2xl mx-auto">
-            We handle orders personally to ensure you get exactly what you need. Contact us to place your order and start your K-Drama fashion journey!
+            {HOME_PAGE_CONTENT.ctaSection.subtitle}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href={CONTACT_INFO.whatsappLink + "?text=Hi!%20I'm%20interested%20in%20SwoonRush%20products"}
+              href={`${CONTACT_INFO.whatsappLink}?text=${encodeURIComponent(HOME_PAGE_CONTENT.ctaSection.whatsappMessage)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 bg-pink hover:bg-pink-dark text-white px-8 py-4 rounded-full font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
             >
-              Order via WhatsApp
+              {HOME_PAGE_CONTENT.ctaSection.whatsappBtn}
             </a>
             <a
               href="/contact"
               className="inline-flex items-center justify-center gap-2 bg-white text-text-dark border-2 border-transparent hover:border-pink px-8 py-4 rounded-full font-medium transition-all duration-300 shadow-md hover:shadow-lg"
             >
-              Use Contact Form
+              {HOME_PAGE_CONTENT.ctaSection.contactFormBtn}
             </a>
           </div>
         </div>
