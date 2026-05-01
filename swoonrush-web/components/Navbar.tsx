@@ -1,10 +1,13 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { Menu, ShoppingBag } from 'lucide-react';
 
 import { NAV_LINKS } from '@/constants';
+
+const SWOONRUSH_LOGO = 'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/swoonrush_logo.png';
 
 const SwoonRushNavbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -23,11 +26,15 @@ const SwoonRushNavbar: React.FC = () => {
           </button>
 
           {/* Logo */}
-          <Link
-            href="/"
-            className="font-display text-xl sm:text-2xl font-bold tracking-wider text-text-dark"
-          >
-            SWOONRUSH
+          <Link href="/" className="flex items-center">
+            <Image
+              src={SWOONRUSH_LOGO}
+              alt="SwoonRush Logo"
+              width={150}
+              height={40}
+              className="h-8 w-auto sm:h-10"
+              priority
+            />
           </Link>
 
           {/* Desktop Nav */}

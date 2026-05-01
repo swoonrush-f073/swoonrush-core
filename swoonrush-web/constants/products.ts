@@ -37,8 +37,9 @@ export const PRODUCTS: Product[] = [
     price: 34.99,
     currency: 'USD',
     images: {
-      front: 'https://github.com/swoonrush-f073/swoonrush-core/blob/main/swoonrush-web/public/products/crash-landing-tee/front.jpg',
-      back: 'https://github.com/swoonrush-f073/swoonrush-core/blob/main/swoonrush-web/public/products/crash-landing-tee/back.jpg',
+      front:
+        'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/crash-landing-tee/front.jpg',
+      back: 'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/crash-landing-tee/back.jpg',
     },
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
     colors: [
@@ -60,9 +61,11 @@ export const PRODUCTS: Product[] = [
     price: 49.99,
     currency: 'USD',
     images: {
-      front: 'https://github.com/swoonrush-f073/swoonrush-core/blob/main/swoonrush-web/public/products/goblin-hoodie/front.jpg',
-      back: 'https://github.com/swoonrush-f073/swoonrush-core/blob/main/swoonrush-web/public/products/goblin-hoodie/back.jpg',
-      detail: 'https://github.com/swoonrush-f073/swoonrush-core/blob/main/swoonrush-web/public/products/goblin-hoodie/detail.jpg',
+      front:
+        'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/goblin-hoodie/front.jpg',
+      back: 'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/goblin-hoodie/back.jpg',
+      detail:
+        'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/goblin-hoodie/detail.jpg',
     },
     sizes: ['S', 'M', 'L', 'XL'],
     colors: [
@@ -84,8 +87,9 @@ export const PRODUCTS: Product[] = [
     price: 36.99,
     currency: 'USD',
     images: {
-      front: 'https://github.com/swoonrush-f073/swoonrush-core/blob/main/swoonrush-web/public/products/itaewon-tee/front.jpg',
-      back: 'https://github.com/swoonrush-f073/swoonrush-core/blob/main/swoonrush-web/public/products/itaewon-tee/back.jpg',
+      front:
+        'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/itaewon-tee/front.jpg',
+      back: 'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/itaewon-tee/back.jpg',
     },
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
     colors: [{ name: 'Black', hex: '#000000' }],
@@ -104,8 +108,9 @@ export const PRODUCTS: Product[] = [
     price: 32.99,
     currency: 'USD',
     images: {
-      front: 'https://github.com/swoonrush-f073/swoonrush-core/blob/main/swoonrush-web/public/products/reply-tee/front.jpg',
-      back: 'https://github.com/swoonrush-f073/swoonrush-core/blob/main/swoonrush-web/public/products/reply-tee/back.jpg',
+      front:
+        'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/reply-tee/front.jpg',
+      back: 'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/reply-tee/back.jpg',
     },
     sizes: ['S', 'M', 'L', 'XL'],
     colors: [
@@ -127,8 +132,9 @@ export const PRODUCTS: Product[] = [
     price: 44.99,
     currency: 'USD',
     images: {
-      front: 'https://github.com/swoonrush-f073/swoonrush-core/blob/main/swoonrush-web/public/products/startup-hoodie/front.jpg',
-      back: 'https://github.com/swoonrush-f073/swoonrush-core/blob/main/swoonrush-web/public/products/startup-hoodie/back.jpg',
+      front:
+        'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/startup-hoodie/front.jpg',
+      back: 'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/startup-hoodie/back.jpg',
     },
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
     colors: [

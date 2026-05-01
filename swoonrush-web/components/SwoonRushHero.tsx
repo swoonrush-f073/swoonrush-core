@@ -8,7 +8,8 @@ import { Heart, Shirt, Sparkles, Users } from 'lucide-react';
 
 import { HERO_CONTENT, HERO_EXTRA_CONTENT } from '@/constants';
 
-const HERO_IMAGE_URL = 'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/hero-models.png';
+const HERO_IMAGE_URL =
+  'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/hero-models.png';
 
 const SwoonRushHero: React.FC = () => {
   return (
