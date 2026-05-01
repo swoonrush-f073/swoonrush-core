@@ -19,8 +19,8 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: 'SwoonRush | Wear Your K-Drama Obsession',
-  description: 'Trendy, aesthetic and made for every K-Drama lover.',
+  title: 'SwoonRush | Wear Your Drama Obsession',
+  description: 'Trendy, aesthetic and made for every Drama lover.',
 };
 
 export default function RootLayout({
@@ -30,9 +30,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
-      <body className="antialiased" suppressHydrationWarning>
+      <body className="font-inter antialiased relative max-h-screen overflow-x-hidden overflow-y-hidden" suppressHydrationWarning>
         <SwoonRushNavbar />
-        <main className="min-h-screen">{children}</main>
+        <main className="max-h-screen overflow-x-hidden overflow-y-scroll">{children}</main>
         <Footer />
       </body>
     </html>

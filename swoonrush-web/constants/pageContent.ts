@@ -8,7 +8,7 @@ export const ABOUT_PAGE_CONTENT = {
     section1: {
       title: 'For the Love of the Scene',
       paragraphs: [
-        'SwoonRush started with a simple idea: what if we could wear the feelings our favorite K-Dramas give us? The heart-fluttering moments, the epic soundtracks, the unforgettable quotes—all woven into everyday apparel.',
+        'SwoonRush started with a simple idea: what if we could wear the feelings our favorite Dramas give us? The heart-fluttering moments, the epic soundtracks, the unforgettable quotes—all woven into everyday apparel.',
         "We didn't want loud, walking billboards. We wanted subtle, aesthetic pieces that only true fans would recognize, while remaining incredibly stylish for anyone else.",
       ],
     },
@@ -27,7 +27,7 @@ export const CONTACT_PAGE_CONTENT = {
   header: {
     title: 'Get in Touch',
     subtitle:
-      "Ready to order your new favorite piece? Have a question about sizing? We're here to help make your K-Drama fashion dreams come true.",
+      "Ready to order your new favorite piece? Have a question about sizing? We're here to help make your Drama fashion dreams come true.",
   },
   contactInfo: {
     title: 'Contact Information',
@@ -66,13 +66,13 @@ export const PRODUCT_DETAIL_CONTENT = {
 export const HOME_PAGE_CONTENT = {
   productsSection: {
     title: 'Our Collection',
-    subtitle: 'Discover K-Drama inspired fashion pieces that tell your story',
+    subtitle: 'Discover Drama inspired fashion pieces that tell your story',
     viewAllBtn: 'View All Styles',
   },
   ctaSection: {
     title: 'Ready to Shop?',
     subtitle:
-      'We handle orders personally to ensure you get exactly what you need. Contact us to place your order and start your K-Drama fashion journey!',
+      'We handle orders personally to ensure you get exactly what you need. Contact us to place your order and start your Drama fashion journey!',
     whatsappBtn: 'Order via WhatsApp',
     whatsappMessage: "Hi! I'm interested in SwoonRush products",
     contactFormBtn: 'Use Contact Form',

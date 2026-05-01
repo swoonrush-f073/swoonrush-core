@@ -8,14 +8,16 @@ import { ABOUT_PAGE_CONTENT, SITE_METADATA } from '@/constants';
 export const metadata: Metadata = {
   title: 'About Us | SwoonRush',
   description:
-    'The story behind SwoonRush and our mission to bring K-Drama inspired fashion to the world.',
+    'The story behind SwoonRush and our mission to bring Drama inspired fashion to the world.',
 };
+
+const ABOUT_IMAGE_URL = "https://github.com/swoonrush-f073/swoonrush-core/blob/main/swoonrush-web/public/products/about-image.png"
 
 export default function AboutPage() {
   return (
     <div className="bg-white min-h-screen">
       {/* Hero Section */}
-      <section className="py-20 sm:py-28 bg-beige">
+      <section className="pt-20 sm:pt-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-text-dark mb-6">
             {ABOUT_PAGE_CONTENT.hero.title}
@@ -27,13 +29,13 @@ export default function AboutPage() {
       </section>
 
       {/* Main Content */}
-      <section className="py-16 sm:py-24">
+      <section className="py-8 sm:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Image */}
-            <div className="relative aspect-square md:aspect-[4/5] rounded-3xl overflow-hidden shadow-lg bg-beige-light">
+            <div className="relative aspect-square max-h-[600px] md:h-auto md:aspect-[4/5] rounded-3xl overflow-hidden shadow-lg bg-beige-light">
               <Image
-                src="/products/about-image.png"
+                src={ABOUT_IMAGE_URL}
                 alt="SwoonRush studio and process"
                 fill
                 className="object-cover"

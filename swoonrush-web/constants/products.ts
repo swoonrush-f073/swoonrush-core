@@ -57,7 +57,7 @@ export const PRODUCTS: Product[] = [
     name: 'Goblin Guardian Hoodie',
     slug: 'goblin-guardian-hoodie',
     description:
-      "Stay cozy like you're wrapped in a K-Drama moment. Premium fleece with aesthetic graphics.",
+      "Stay cozy like you're wrapped in a Drama moment. Premium fleece with aesthetic graphics.",
     price: 49.99,
     currency: 'USD',
     images: {
@@ -104,7 +104,7 @@ export const PRODUCTS: Product[] = [
     name: 'Reply 1988 Vintage Tee',
     slug: 'reply-1988-vintage-tee',
     description:
-      'A nostalgic retro vibe for the classic K-drama fans. Features a faded vintage print.',
+      'A nostalgic retro vibe for the classic Drama fans. Features a faded vintage print.',
     price: 32.99,
     currency: 'USD',
     images: {

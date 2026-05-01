@@ -6,7 +6,7 @@ export const CONTACT_INFO = {
   instagram: '@swoonrush',
   instagramLink: 'https://instagram.com/swoonrush',
   address: {
-    line1: '123 K-Drama Lane',
+    line1: '123 Drama Lane',
     line2: 'Seoul District, CA 90210',
     country: 'USA',
   },

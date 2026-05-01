@@ -21,33 +21,42 @@ const featureItems = [
 
 const SwoonRushHero: React.FC = () => {
   return (
-    <section className="relative h-dvh min-h-[700px] bg-beige overflow-hidden flex flex-col">
+    <section className="relative h-dvh min-h-[900px] lg:min-h-[650px] bg-beige overflow-hidden flex flex-col">
       {/* Main hero area — grows to fill available space */}
       <div className="relative flex-1 flex flex-col lg:flex-row lg:items-stretch max-w-7xl mx-auto w-full px-5 sm:px-6">
         {/* ─── Text Column ─── */}
         <div className="relative z-10 flex flex-col justify-start lg:justify-center lg:w-[45%] pt-24 sm:pt-28 lg:pt-0 pb-2 lg:pb-20">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-          >
-            <h1 className="font-display text-[2.5rem] leading-[1.1] sm:text-5xl md:text-6xl lg:text-[4.5rem] font-bold text-text-dark">
-              {HERO_CONTENT.heading}
-              <br />
-              <span className="text-pink italic">{HERO_CONTENT.highlightedText}</span>
-              <br />
-              {HERO_CONTENT.headingEnd}
-            </h1>
-          </motion.div>
+          <div className="relative">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}
+            >
+              <h1 className="font-display text-[2.5rem] leading-[1.1] sm:text-5xl md:text-6xl lg:text-[4.5rem] font-bold text-text-dark">
+                {HERO_CONTENT.heading}
+                <br />
+                <span className="text-pink italic">{HERO_CONTENT.highlightedText}</span>
+                <br />
+                {HERO_CONTENT.headingEnd}
+              </h1>
+            </motion.div>
+
+            {/* FloatingBadge — mobile only, positioned next to heading */}
+            <div className="lg:hidden absolute -right-2 top-5 sm:right-0">
+              <FloatingBadge />
+            </div>
+          </div>
 
           {/* Small heart accent */}
           <motion.div
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.4, delay: 0.5 }}
-            className="my-3 lg:my-4"
+            className="w-[60%] my-3 lg:my-4 flex flex-row justify-between items-center"
           >
-            <Heart className="text-pink fill-pink" size={18} />
+            <div className='w-full h-[0.5px] bg-black/50' />
+            <Heart className="text-pink fill-pink mx-4" size={30} />
+            <div className='w-full h-[0.5px] bg-black/50' />
           </motion.div>
 
           <motion.p
@@ -71,7 +80,7 @@ const SwoonRushHero: React.FC = () => {
                 <div className="w-10 h-10 bg-pink/10 rounded-full flex items-center justify-center">
                   <Icon className="text-pink" size={20} />
                 </div>
-                <p className="text-xs font-medium text-text-dark whitespace-nowrap">{label}</p>
+                <p className="text-xs text-text-dark whitespace-nowrap">{label}</p>
               </div>
             ))}
           </motion.div>
@@ -85,7 +94,7 @@ const SwoonRushHero: React.FC = () => {
           >
             <Link
               href="/#products"
-              className="inline-flex items-center gap-2 bg-pink hover:bg-pink-dark text-white px-8 py-3.5 rounded-xl font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-[1.03] text-sm sm:text-base tracking-wide uppercase"
+              className="inline-flex items-center gap-2 bg-pink hover:bg-pink-dark text-white px-8 py-3.5 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-[1.03] text-sm sm:text-base tracking-wide uppercase"
             >
               {HERO_CONTENT.cta.primary}
             </Link>
@@ -102,7 +111,7 @@ const SwoonRushHero: React.FC = () => {
           <div className="relative w-full h-[45vh] sm:h-[50vh] lg:h-full min-h-[300px]">
             <Image
               src={HERO_IMAGE_URL}
-              alt="K-Drama inspired fashion models wearing SwoonRush t-shirts"
+              alt="Drama inspired fashion models wearing SwoonRush t-shirts"
               fill
               className="object-contain object-bottom"
               priority
@@ -110,7 +119,10 @@ const SwoonRushHero: React.FC = () => {
             />
           </div>
 
-          <FloatingBadge />
+          {/* FloatingBadge — desktop only */}
+          <div className="hidden lg:block">
+            <FloatingBadge />
+          </div>
         </motion.div>
       </div>
 
@@ -119,15 +131,15 @@ const SwoonRushHero: React.FC = () => {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.8 }}
-        className="lg:hidden flex-shrink-0 bg-white/80 backdrop-blur-sm border-t border-beige-dark/30"
+        className="lg:hidden flex-shrink-0 bg-white/40 backdrop-blur-sm border-t border-beige-dark/30"
       >
         <div className="grid grid-cols-4 gap-1 px-3 py-3">
           {featureItems.map(({ icon: Icon, label }) => (
             <div key={label} className="flex flex-col items-center text-center gap-1">
               <div className="w-10 h-10 bg-beige rounded-xl flex items-center justify-center">
-                <Icon className="text-pink" size={20} />
+                <Icon className="text-pink" size={14} />
               </div>
-              <p className="text-[10px] sm:text-xs font-medium text-text-dark leading-tight">
+              <p className="text-[10px] sm:text-xs text-text-dark leading-tight">
                 {label}
               </p>
             </div>

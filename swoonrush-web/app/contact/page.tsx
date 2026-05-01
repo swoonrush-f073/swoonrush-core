@@ -8,7 +8,7 @@ import { CONTACT_INFO, CONTACT_PAGE_CONTENT, SOCIAL_MEDIA } from '@/constants';
 export const metadata: Metadata = {
   title: 'Contact Us | SwoonRush',
   description:
-    'Get in touch with us to place an order or ask questions about our K-Drama inspired apparel.',
+    'Get in touch with us to place an order or ask questions about our Drama inspired apparel.',
 };
 
 export default function ContactPage() {
@@ -40,10 +40,10 @@ export default function ContactPage() {
                     <Phone size={20} className="text-pink" />
                   </div>
                   <div>
-                    <p className="font-medium text-sm text-text-light">
+                    <p className="text-sm text-text-light">
                       {CONTACT_PAGE_CONTENT.contactInfo.phoneLabel}
                     </p>
-                    <p className="text-lg font-medium">{CONTACT_INFO.phone}</p>
+                    <p className="font-medium text-md">{CONTACT_INFO.phone}</p>
                   </div>
                 </a>
 
@@ -55,10 +55,10 @@ export default function ContactPage() {
                     <Mail size={20} className="text-pink" />
                   </div>
                   <div>
-                    <p className="font-medium text-sm text-text-light">
+                    <p className="text-sm text-text-light">
                       {CONTACT_PAGE_CONTENT.contactInfo.emailLabel}
                     </p>
-                    <p className="text-lg font-medium">{CONTACT_INFO.email}</p>
+                    <p className="font-medium text-md">{CONTACT_INFO.email}</p>
                   </div>
                 </a>
 
@@ -67,10 +67,10 @@ export default function ContactPage() {
                     <MapPin size={20} className="text-pink" />
                   </div>
                   <div>
-                    <p className="font-medium text-sm text-text-light">
+                    <p className="text-sm text-text-light">
                       {CONTACT_PAGE_CONTENT.contactInfo.addressLabel}
                     </p>
-                    <p className="text-lg font-medium">
+                    <p className="font-medium text-md">
                       {CONTACT_INFO.address.line1}
                       <br />
                       {CONTACT_INFO.address.line2}

@@ -30,7 +30,7 @@ const ProductGallery: React.FC<ProductGalleryProps> = ({
   return (
     <div className="flex flex-col gap-4">
       {/* Main Image */}
-      <div className="relative aspect-[3/4] w-full bg-beige-light rounded-2xl overflow-hidden shadow-sm">
+      <div className="relative max-h-[600px] aspect-[3/4] w-full bg-beige-light rounded-2xl overflow-hidden shadow-sm">
         <AnimatePresence mode="wait">
           <motion.div
             key={activeImage}
