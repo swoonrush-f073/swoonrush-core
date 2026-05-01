@@ -3,13 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "npm run dev --workspace=swoonrush-web",
-    "build": "npm run build --workspace=swoonrush-web",
-    "start": "npm run start --workspace=swoonrush-web",
-    "lint": "npm run lint --workspace=swoonrush-web",
-    "format": "npm run format --workspace=swoonrush-web"
-  },
-  "workspaces": [
-    "swoonrush-web"
-  ]
+    "dev": "npm run dev --prefix swoonrush-web",
+    "build": "npm run build --prefix swoonrush-web",
+    "start": "npm run start --prefix swoonrush-web",
+    "lint": "npm run lint --prefix swoonrush-web",
+    "format": "npm run format --prefix swoonrush-web"
+  }
 }
