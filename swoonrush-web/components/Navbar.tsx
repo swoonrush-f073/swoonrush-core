@@ -7,7 +7,7 @@ import { Menu, ShoppingBag } from 'lucide-react';
 
 import { NAV_LINKS } from '@/constants';
 
-const SWOONRUSH_LOGO = 'https://github.com/swoonrush-f073/swoonrush-core/blob/main/swoonrush-web/public/swoonrush_logo.png';
+const SWOONRUSH_LOGO = 'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/refs/heads/main/swoonrush-web/public/swoonrush_logo.png';
 
 const SwoonRushNavbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
