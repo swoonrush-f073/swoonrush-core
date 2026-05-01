@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     'The story behind SwoonRush and our mission to bring Drama inspired fashion to the world.',
 };
 
-const ABOUT_IMAGE_URL = "https://github.com/swoonrush-f073/swoonrush-core/blob/main/swoonrush-web/public/products/about-image.png"
+const ABOUT_IMAGE_URL = "https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/refs/heads/main/swoonrush-web/public/products/about-image.png"
 
 export default function AboutPage() {
   return (
@@ -30,8 +30,8 @@ export default function AboutPage() {
 
       {/* Main Content */}
       <section className="py-8 sm:py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
             {/* Image */}
             <div className="relative aspect-square max-h-[600px] md:h-auto md:aspect-[4/5] rounded-3xl overflow-hidden shadow-lg bg-beige-light">
               <Image
@@ -43,7 +43,7 @@ export default function AboutPage() {
             </div>
 
             {/* Text */}
-            <div className="space-y-8">
+            <div className="space-b-8">
               <div>
                 <h2 className="font-display text-3xl font-bold text-text-dark mb-4">
                   {ABOUT_PAGE_CONTENT.content.section1.title}

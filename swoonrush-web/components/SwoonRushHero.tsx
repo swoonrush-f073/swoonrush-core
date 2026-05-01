@@ -21,7 +21,7 @@ const featureItems = [
 
 const SwoonRushHero: React.FC = () => {
   return (
-    <section className="relative h-dvh min-h-[900px] lg:min-h-[650px] bg-beige overflow-hidden flex flex-col">
+    <section className="relative h-dvh min-h-[700px] lg:min-h-[650px] bg-beige overflow-hidden flex flex-col">
       {/* Main hero area — grows to fill available space */}
       <div className="relative flex-1 flex flex-col lg:flex-row lg:items-stretch max-w-7xl mx-auto w-full px-5 sm:px-6">
         {/* ─── Text Column ─── */}
@@ -108,7 +108,7 @@ const SwoonRushHero: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="relative lg:w-[55%] flex-1 lg:flex-initial flex items-end justify-center lg:justify-end lg:self-stretch"
         >
-          <div className="relative w-full h-[45vh] sm:h-[50vh] lg:h-full min-h-[300px]">
+          <div className="relative w-full h-[50vh] sm:h-[50vh] lg:h-full min-h-[300px]">
             <Image
               src={HERO_IMAGE_URL}
               alt="Drama inspired fashion models wearing SwoonRush t-shirts"
@@ -127,7 +127,7 @@ const SwoonRushHero: React.FC = () => {
       </div>
 
       {/* ─── Mobile Features Bar (bottom strip) ─── */}
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.8 }}
@@ -145,7 +145,7 @@ const SwoonRushHero: React.FC = () => {
             </div>
           ))}
         </div>
-      </motion.div>
+      </motion.div> */}
     </section>
   );
 };
