@@ -32,7 +32,7 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
       <body className="antialiased" suppressHydrationWarning>
         <SwoonRushNavbar />
-        <main className="min-h-screen pt-16">{children}</main>
+        <main className="min-h-screen">{children}</main>
         <Footer />
       </body>
     </html>

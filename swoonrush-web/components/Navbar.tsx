@@ -13,7 +13,7 @@ const SwoonRushNavbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-beige/95 backdrop-blur-sm shadow-sm">
+    <nav className="absolute top-0 left-0 right-0 z-50 bg-transparent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16">
           {/* Hamburger Menu */}
@@ -26,7 +26,7 @@ const SwoonRushNavbar: React.FC = () => {
           </button>
 
           {/* Logo */}
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="flex items-center pt-5">
             <Image
               src={SWOONRUSH_LOGO}
               alt="SwoonRush Logo"

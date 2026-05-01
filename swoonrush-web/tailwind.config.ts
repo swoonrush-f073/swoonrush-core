@@ -28,6 +28,9 @@ const config: Config = {
         display: ['var(--font-playfair)', 'serif'],
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
       },
+      animation: {
+        'spin-slow': 'spin 20s linear infinite',
+      },
     },
   },
   plugins: [],

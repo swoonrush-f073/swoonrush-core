@@ -20,8 +20,6 @@ jobs:
     defaults:
       run:
         working-directory: swoonrush-web
-    env:
-      NEXT_PUBLIC_BASE_PATH: /swoonrush-core
     steps:
       - name: Checkout
         uses: actions/checkout@v4
