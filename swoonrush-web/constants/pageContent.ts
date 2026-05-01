@@ -2,7 +2,7 @@ export const ABOUT_PAGE_CONTENT = {
   hero: {
     title: 'The SwoonRush Story',
     subtitle:
-      'Born from late-night binge-watching sessions and a deep love for Asian aesthetics.',
+      'Born from late-night binge-watching sessions and a deep love for Korean aesthetics.',
   },
   content: {
     section1: {
