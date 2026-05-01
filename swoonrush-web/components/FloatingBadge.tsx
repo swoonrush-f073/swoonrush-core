@@ -21,7 +21,7 @@ const FloatingBadge: React.FC = () => {
           <defs>
             <path
               id="circlePath"
-              d="M 60,60 m -45,0 a 45,45 0 1,1 90,0 a 45,45 0 1,1 -90,0"
+              d="M 60,60 m -50,0 a 50,50 0 1,1 100,0 a 50,50 0 1,1 -100,0"
             />
           </defs>
           <text

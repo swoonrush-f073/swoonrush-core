@@ -3,11 +3,19 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Menu, X } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Menu, X, Home, ShoppingBag, Info, Mail, ChevronRight } from 'lucide-react';
 
 import { NAV_LINKS } from '@/constants';
 
 const SWOONRUSH_LOGO = 'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/refs/heads/main/swoonrush-web/public/swoonrush_logo.png';
+
+const navIcons = {
+  'Home': { icon: Home, desc: 'Return to home' },
+  'Shop': { icon: ShoppingBag, desc: 'Explore our collection' },
+  'About': { icon: Info, desc: 'Learn about our story' },
+  'Contact': { icon: Mail, desc: 'Say hello to us' },
+};
 
 const SwoonRushNavbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -26,7 +34,7 @@ const SwoonRushNavbar: React.FC = () => {
           {/* Hamburger Menu */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="p-2 hover:bg-pink/10 rounded-lg transition-colors md:hidden"
+            className="p-2 rounded-lg transition-colors md:hidden"
             aria-label="Menu"
           >
             {isMobileMenuOpen ? (
@@ -73,22 +81,50 @@ const SwoonRushNavbar: React.FC = () => {
       </div>
 
       {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden fixed inset-0 top-16 bg-beige backdrop-blur-sm z-40">
-          <div className="flex flex-col items-center justify-center h-full px-4 space-y-6">
-            {NAV_LINKS.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className="text-2xl text-text-dark hover:text-pink transition-colors py-3"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {link.name}
-              </Link>
-            ))}
-          </div>
-        </div>
-      )}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="md:hidden fixed inset-0 top-16 bg-beige/95 backdrop-blur-md z-40"
+          >
+            <div className="flex flex-col gap-4 p-6 h-[calc(100vh-64px)] max-w-md mx-auto w-full">
+              {NAV_LINKS.map((link, idx) => {
+                const info = navIcons[link.name as keyof typeof navIcons] || { icon: Home, desc: '' };
+                const Icon = info.icon;
+                return (
+                  <motion.div
+                    key={link.name}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: idx * 0.1 }}
+                  >
+                    <Link
+                      href={link.href}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="flex items-center p-4 bg-white rounded-2xl shadow-sm border border-pink/10 hover:border-pink hover:shadow-md transition-all group w-full"
+                    >
+                      <div className="p-3 rounded-xl mr-4 transition-colors">
+                        <Icon className="w-6 h-6 text-pink group-hover:scale-110 transition-transform" />
+                      </div>
+                      <div className="flex flex-col items-start">
+                        <span className="text-text-dark font-display text-lg font-bold">
+                          {link.name}
+                        </span>
+                        <span className="text-text-light text-xs font-medium">
+                          {info.desc}
+                        </span>
+                      </div>
+                      <ChevronRight className="ml-auto w-5 h-5 text-pink/30 group-hover:text-pink group-hover:translate-x-1 transition-all" />
+                    </Link>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };

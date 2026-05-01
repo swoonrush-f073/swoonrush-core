@@ -49,7 +49,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-beige">
+      <section className="py-20 pb-36 sm:pb-20 bg-beige">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-text-dark mb-6">
             {HOME_PAGE_CONTENT.ctaSection.title}

@@ -15,7 +15,7 @@ const ABOUT_IMAGE_URL = "https://raw.githubusercontent.com/swoonrush-f073/swoonr
 
 export default function AboutPage() {
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-white min-h-screen pb-16 sm:pb-0">
       {/* Hero Section */}
       <section className="pt-20 sm:pt-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
