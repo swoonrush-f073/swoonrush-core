@@ -45,7 +45,7 @@ const SwoonRushHero: React.FC = () => {
 
             {/* FloatingBadge — mobile only, positioned next to heading */}
             <div className="lg:hidden absolute -right-2 top-5 sm:right-0">
-              <FloatingBadge />
+              <FloatingBadge className="right-0 top-0" />
             </div>
           </div>
 
@@ -128,7 +128,7 @@ const SwoonRushHero: React.FC = () => {
 
           {/* FloatingBadge — desktop only */}
           <div className="hidden lg:block">
-            <FloatingBadge />
+            <FloatingBadge className="lg:-right-2 lg:top-28" />
           </div>
         </motion.div>
       </div>

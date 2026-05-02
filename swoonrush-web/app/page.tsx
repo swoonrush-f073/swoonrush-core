@@ -37,14 +37,14 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="mt-16 text-center">
+          {featuredProducts?.length > 5 && <div className="mt-16 text-center">
             <Link
               href="/#products" // Or /products if there was a full catalog
               className="inline-flex items-center justify-center gap-2 border-2 border-beige-dark text-text-dark hover:border-pink hover:text-pink px-8 py-3 rounded-full font-medium transition-all duration-300"
             >
               {HOME_PAGE_CONTENT.productsSection.viewAllBtn}
             </Link>
-          </div>
+          </div>}
         </div>
       </section>
 

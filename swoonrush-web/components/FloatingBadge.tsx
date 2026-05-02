@@ -4,13 +4,17 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Heart } from 'lucide-react';
 
-const FloatingBadge: React.FC = () => {
+interface FloatingBadgeProps {
+  className?: string;
+}
+
+const FloatingBadge: React.FC<FloatingBadgeProps> = ({ className }) => {
   return (
     <motion.div
       initial={{ opacity: 0, rotate: -20, scale: 0.8 }}
       animate={{ opacity: 1, rotate: 0, scale: 1 }}
       transition={{ duration: 0.6, delay: 1 }}
-      className="absolute right-2 sm:right-4 sm:top-24 lg:right-8 lg:top-28 z-20"
+      className={`absolute z-20 ${className || 'right-2 sm:right-4 sm:top-24 lg:right-0 lg:top-28'}`}
     >
       <div className="relative w-[90px] h-[90px] sm:w-[100px] sm:h-[100px] lg:w-[120px] lg:h-[120px]">
         {/* Circular rotating text */}
