@@ -69,9 +69,21 @@ export default async function ProductPage({
             <h1 className="font-display text-3xl sm:text-4xl font-bold text-text-dark mb-4">
               {product.name}
             </h1>
-            <p className="text-2xl font-semibold text-text-dark mb-6">
-              {formatPrice(product.price, product.currency)}
-            </p>
+            <div className="flex items-center flex-wrap gap-3 mb-6">
+              <span className="text-2xl font-bold text-text-dark">
+                {formatPrice(product.price, product.currency)}
+              </span>
+              {product.originalPrice && (
+                <span className="text-xl text-text-light/70 line-through font-medium">
+                  {formatPrice(product.originalPrice, product.currency)}
+                </span>
+              )}
+              {product.offerPercentage && product.offerPercentage > 0 ? (
+                <span className="bg-red-500/10 text-red-600 px-3 py-1 rounded-full text-sm font-bold tracking-wide border border-red-500/20">
+                  {product.offerPercentage}% OFF
+                </span>
+              ) : null}
+            </div>
 
             <div className="prose prose-sm text-text-dark mb-8">
               <p>{product.description}</p>
@@ -93,7 +105,7 @@ export default async function ProductPage({
             </div>
 
             {/* Colors */}
-            <div className="mb-6">
+            {/* <div className="mb-6">
               <h4 className="text-sm font-medium text-text-dark mb-3">
                 {PRODUCT_DETAIL_CONTENT.labels.availableColors}
               </h4>
@@ -114,9 +126,7 @@ export default async function ProductPage({
                   </div>
                 ))}
               </div>
-            </div>
-
-            <hr className="border-beige-dark my-2" />
+            </div> */}
 
             {/* The rest is client side sizing but we skip logic for static view */}
             <div className="mb-8 opacity-70 pointer-events-none">
@@ -127,7 +137,7 @@ export default async function ProductPage({
                 {product.sizes.map((s) => (
                   <div
                     key={s}
-                    className="py-2 text-center border border-beige-dark rounded-md text-sm"
+                    className="py-2 text-center border border-black/60 rounded-md text-sm"
                   >
                     {s}
                   </div>

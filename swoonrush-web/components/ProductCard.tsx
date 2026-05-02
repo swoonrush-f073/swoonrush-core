@@ -41,11 +41,12 @@ const ProductCard: React.FC<ProductCardProps> = ({
               </span>
             </div>
           )}
-          {product.featured && product.inStock && (
-            <div className="absolute top-3 right-3 bg-pink text-white px-3 py-1 rounded-full text-xs font-medium tracking-wider shadow-sm">
-              BESTSELLER
+          {product.featured && product.inStock && product.originalPrice && product.originalPrice !== product.price && (
+            <div className="absolute top-3 right-3 bg-pink text-white px-3 py-1 rounded-full text-xs font-medium tracking-wider shadow-sm z-10">
+              {product.offerPercentage}% OFF
             </div>
           )}
+
         </div>
 
         {/* Product Info */}
@@ -56,9 +57,16 @@ const ProductCard: React.FC<ProductCardProps> = ({
           <h3 className="text-lg font-display font-semibold text-text-dark group-hover:text-pink transition-colors line-clamp-1">
             {product.name}
           </h3>
-          <p className="text-text-dark font-medium mt-1">
-            {formatPrice(product.price, product.currency)}
-          </p>
+          <div className="flex items-center justify-center gap-2 mt-1">
+            <span className="text-text-dark font-semibold">
+              {formatPrice(product.price, product.currency)}
+            </span>
+            {product.originalPrice && product.originalPrice !== product.price && (
+              <span className="text-text-light/70 text-sm line-through font-medium">
+                {formatPrice(product.originalPrice, product.currency)}
+              </span>
+            )}
+          </div>
         </div>
       </Link>
     </motion.div>
