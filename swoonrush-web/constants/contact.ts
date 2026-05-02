@@ -1,7 +1,7 @@
 export const CONTACT_INFO = {
   phone: '+91 9961030291',
   email: 'swoonrush@gmail.com',
-  whatsapp: '+15551234567',
+  whatsapp: '+919961030291',
   whatsappLink: 'https://wa.me/9961030291',
   instagram: '@swoonrush',
   instagramLink: 'https://instagram.com/swoonrush',
