@@ -85,7 +85,7 @@ const ContactForm: React.FC = () => {
               type="text"
               id="product"
               className="w-full px-4 py-3 rounded-xl border border-beige-dark bg-beige-light focus:outline-none focus:ring-2 focus:ring-pink focus:border-transparent transition-all"
-              placeholder="e.g. Crash Landing Comfort Tee"
+              placeholder="e.g. Lovely Runner Oversized Tshirt"
             />
           </div>
 
