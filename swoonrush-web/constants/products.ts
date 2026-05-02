@@ -31,7 +31,7 @@ export const PRODUCTS: Product[] = [
   {
     id: '1',
     name: 'Lovely Runner Oversized T-Shirt',
-    slug: 'lovely-runner-oversized-t-shirt',
+    slug: 'lovely-runner-oversized',
     description:
       'Inspired by epic love stories. Soft, comfortable, and perfect for binge-watching your favorite series.',
     price: 34.99,
@@ -54,18 +54,16 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: '2',
-    name: 'Goblin Guardian Hoodie',
-    slug: 'goblin-guardian-hoodie',
+    name: 'Team Gwan-sik Oversized T-Shirt',
+    slug: 'team-gwan-sik-oversized',
     description:
       "Stay cozy like you're wrapped in a Drama moment. Premium fleece with aesthetic graphics.",
     price: 49.99,
     currency: 'USD',
     images: {
       front:
-        'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/goblin-hoodie/front.jpg',
-      back: 'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/goblin-hoodie/back.jpg',
-      detail:
-        'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/goblin-hoodie/detail.jpg',
+        'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/team-gwan-sik-oversized/front.jpg',
+      back: 'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/team-gwan-sik-oversized/back.jpg',
     },
     sizes: ['S', 'M', 'L', 'XL'],
     colors: [
