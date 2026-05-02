@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 import { Product } from '@/constants';
+import { trackEvent } from '@/utils/analytics';
 import { formatPrice } from '@/utils/formatPrice';
 
 interface ProductCardProps {
@@ -25,7 +26,11 @@ const ProductCard: React.FC<ProductCardProps> = ({
       transition={{ delay, duration: 0.5 }}
       className="group"
     >
-      <Link href={`/products/${product.slug}`} className="block">
+      <Link
+        href={`/products/${product.slug}`}
+        className="block"
+        onClick={() => trackEvent('product_view', 'engagement', product.name)}
+      >
         {/* Image Container */}
         <div className="relative aspect-[3/4] overflow-hidden bg-beige-light rounded-2xl mb-4 shadow-sm group-hover:shadow-md transition-shadow duration-300">
           <Image

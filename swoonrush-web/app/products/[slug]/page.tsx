@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 
 import ProductActions from '@/components/ProductActions';
 import ProductGallery from '@/components/ProductGallery';
-import { CONTACT_INFO, PRODUCT_DETAIL_CONTENT, PRODUCTS } from '@/constants';
+import { PRODUCT_DETAIL_CONTENT, PRODUCTS } from '@/constants';
 import { formatPrice } from '@/utils/formatPrice';
 
 export async function generateMetadata({

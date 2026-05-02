@@ -46,7 +46,7 @@ export default function AboutPage() {
             {/* Text */}
             <div className="space-b-8">
               <div>
-                <h2 className="font-display text-3xl font-bold text-text-dark mb-4">
+                <h2 className="font-display text-2xl font-bold text-text-dark mb-2">
                   {ABOUT_PAGE_CONTENT.content.section1.title}
                 </h2>
                 <div className="space-y-4 text-text-light text-base leading-relaxed">
@@ -61,7 +61,7 @@ export default function AboutPage() {
               </div>
 
               <div>
-                <h2 className="font-display text-3xl font-bold text-text-dark mb-4">
+                <h2 className="font-display text-2xl font-bold text-text-dark mb-2 mt-4">
                   {ABOUT_PAGE_CONTENT.content.section2.title}
                 </h2>
                 <div className="space-y-4 text-text-light text-base leading-relaxed">

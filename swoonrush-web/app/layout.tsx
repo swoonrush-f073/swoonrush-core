@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { Inter, Playfair_Display } from 'next/font/google';
 
+import GAWrapper from '@/components/GAWrapper';
+
 import './globals.css';
 
 import Footer from '@/components/Footer';
@@ -30,6 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
+      <GAWrapper />
       <body
         className="font-inter antialiased relative max-h-screen overflow-x-hidden overflow-y-hidden"
         suppressHydrationWarning

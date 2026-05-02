@@ -3,6 +3,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
+import { trackEvent } from '@/utils/analytics';
+
 const ContactForm: React.FC = () => {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success'>(
     'idle',
@@ -14,6 +16,7 @@ const ContactForm: React.FC = () => {
     // Simulate form submission
     setTimeout(() => {
       setStatus('success');
+      trackEvent('form_submission', 'conversion', 'Contact Form');
     }, 1500);
   };
 

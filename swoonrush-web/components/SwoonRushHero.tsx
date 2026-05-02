@@ -8,6 +8,7 @@ import { Gift, Heart, Shirt, Users } from 'lucide-react';
 
 import FloatingBadge from '@/components/FloatingBadge';
 import { HERO_CONTENT, HERO_EXTRA_CONTENT } from '@/constants';
+import { trackEvent } from '@/utils/analytics';
 
 const HERO_IMAGE_URL =
   'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/hero-models.png';
@@ -101,6 +102,9 @@ const SwoonRushHero: React.FC = () => {
           >
             <Link
               href="/#products"
+              onClick={() =>
+                trackEvent('hero_cta_click', 'engagement', 'Hero Section')
+              }
               className="inline-flex items-center gap-2 bg-pink hover:bg-pink-dark text-white px-8 py-3.5 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-[1.03] text-sm sm:text-base tracking-wide uppercase"
             >
               {HERO_CONTENT.cta.primary}

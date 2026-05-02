@@ -6,6 +6,7 @@ import Link from 'next/link';
 import ProductCard from '@/components/ProductCard';
 import SwoonRushHero from '@/components/SwoonRushHero';
 import { CONTACT_INFO, HOME_PAGE_CONTENT, PRODUCTS } from '@/constants';
+import { trackEvent } from '@/utils/analytics';
 
 export default function Home() {
   const featuredProducts = PRODUCTS.filter((p) => p.featured);
@@ -37,14 +38,16 @@ export default function Home() {
             ))}
           </div>
 
-          {featuredProducts?.length > 5 && <div className="mt-16 text-center">
-            <Link
-              href="/#products" // Or /products if there was a full catalog
-              className="inline-flex items-center justify-center gap-2 border-2 border-beige-dark text-text-dark hover:border-pink hover:text-pink px-8 py-3 rounded-full font-medium transition-all duration-300"
-            >
-              {HOME_PAGE_CONTENT.productsSection.viewAllBtn}
-            </Link>
-          </div>}
+          {featuredProducts?.length > 5 && (
+            <div className="mt-16 text-center">
+              <Link
+                href="/#products" // Or /products if there was a full catalog
+                className="inline-flex items-center justify-center gap-2 border-2 border-beige-dark text-text-dark hover:border-pink hover:text-pink px-8 py-3 rounded-full font-medium transition-all duration-300"
+              >
+                {HOME_PAGE_CONTENT.productsSection.viewAllBtn}
+              </Link>
+            </div>
+          )}
         </div>
       </section>
 
@@ -62,6 +65,9 @@ export default function Home() {
               href={`${CONTACT_INFO.whatsappLink}?text=${encodeURIComponent(HOME_PAGE_CONTENT.ctaSection.whatsappMessage)}`}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() =>
+                trackEvent('whatsapp_click', 'conversion', 'CTA Section')
+              }
               className="inline-flex items-center justify-center gap-2 bg-pink hover:bg-pink-dark text-white px-8 py-4 rounded-full font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
             >
               {HOME_PAGE_CONTENT.ctaSection.whatsappBtn}
