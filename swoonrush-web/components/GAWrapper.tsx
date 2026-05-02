@@ -4,7 +4,13 @@ import React from 'react';
 import { GoogleAnalytics } from 'nextjs-google-analytics';
 
 const GAWrapper: React.FC = () => {
-  return <GoogleAnalytics trackPageViews />;
+  return (
+    <GoogleAnalytics
+      trackPageViews
+      gaMeasurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}
+      debugMode={true}
+    />
+  );
 };
 
 export default GAWrapper;
