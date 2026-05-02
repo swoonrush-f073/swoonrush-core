@@ -4,10 +4,10 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Heart, Gift, Shirt, Users } from 'lucide-react';
+import { Gift, Heart, Shirt, Users } from 'lucide-react';
 
-import { HERO_CONTENT, HERO_EXTRA_CONTENT } from '@/constants';
 import FloatingBadge from '@/components/FloatingBadge';
+import { HERO_CONTENT, HERO_EXTRA_CONTENT } from '@/constants';
 
 const HERO_IMAGE_URL =
   'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/hero-models.png';
@@ -35,7 +35,9 @@ const SwoonRushHero: React.FC = () => {
               <h1 className="font-display text-[2.5rem] leading-[1.1] sm:text-5xl md:text-6xl lg:text-[4.5rem] font-bold text-text-dark">
                 {HERO_CONTENT.heading}
                 <br />
-                <span className="text-pink italic">{HERO_CONTENT.highlightedText}</span>
+                <span className="text-pink italic">
+                  {HERO_CONTENT.highlightedText}
+                </span>
                 <br />
                 {HERO_CONTENT.headingEnd}
               </h1>
@@ -54,9 +56,9 @@ const SwoonRushHero: React.FC = () => {
             transition={{ duration: 0.4, delay: 0.5 }}
             className="w-[60%] my-3 lg:my-4 flex flex-row justify-between items-center"
           >
-            <div className='w-full h-[0.5px] bg-black/50' />
+            <div className="w-full h-[0.5px] bg-black/50" />
             <Heart className="text-pink fill-pink mx-4" size={30} />
-            <div className='w-full h-[0.5px] bg-black/50' />
+            <div className="w-full h-[0.5px] bg-black/50" />
           </motion.div>
 
           <motion.p
@@ -76,11 +78,16 @@ const SwoonRushHero: React.FC = () => {
             className="hidden lg:flex items-center gap-6 mt-6"
           >
             {featureItems.map(({ icon: Icon, label }) => (
-              <div key={label} className="flex flex-col items-center text-center gap-1.5">
+              <div
+                key={label}
+                className="flex flex-col items-center text-center gap-1.5"
+              >
                 <div className="w-10 h-10 bg-pink/10 rounded-full flex items-center justify-center">
                   <Icon className="text-pink" size={20} />
                 </div>
-                <p className="text-xs text-text-dark whitespace-nowrap">{label}</p>
+                <p className="text-xs text-text-dark whitespace-nowrap">
+                  {label}
+                </p>
               </div>
             ))}
           </motion.div>
@@ -94,7 +101,7 @@ const SwoonRushHero: React.FC = () => {
           >
             <Link
               href="/#products"
-              className="inline-flex items-center gap-2 bg-pink hover:bg-pink-dark text-white px-8 py-3.5 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-[1.03] text-sm sm:text-base tracking-wide uppercase"
+              className="inline-flex items-center gap-2 bg-pink hover:bg-pink-dark text-white px-8 py-3.5 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-[1.03] text-sm sm:text-base tracking-wide uppercase"
             >
               {HERO_CONTENT.cta.primary}
             </Link>

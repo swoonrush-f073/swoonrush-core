@@ -14,10 +14,7 @@ const FloatingBadge: React.FC = () => {
     >
       <div className="relative w-[90px] h-[90px] sm:w-[100px] sm:h-[100px] lg:w-[120px] lg:h-[120px]">
         {/* Circular rotating text */}
-        <svg
-          className="w-full h-full animate-spin-slow"
-          viewBox="0 0 120 120"
-        >
+        <svg className="w-full h-full animate-spin-slow" viewBox="0 0 120 120">
           <defs>
             <path
               id="circlePath"

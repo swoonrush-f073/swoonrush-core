@@ -50,7 +50,7 @@ export const PRODUCT_DETAIL_CONTENT = {
     material: 'Material:',
     fit: 'Fit:',
     availableColors: 'Available Colors',
-    sizeSelectionEx: 'Size Selection (Example UI)',
+    sizeSelectionEx: 'Size Selection',
     outOfStock: 'Currently Out of Stock',
     orderViaWhatsapp: 'Order via WhatsApp',
     inquireViaForm: 'Inquire via Form',

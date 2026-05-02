@@ -11,11 +11,12 @@ export const metadata: Metadata = {
     'The story behind SwoonRush and our mission to bring Drama inspired fashion to the world.',
 };
 
-const ABOUT_IMAGE_URL = "https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/refs/heads/main/swoonrush-web/public/products/about-image.png"
+const ABOUT_IMAGE_URL =
+  'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/refs/heads/main/swoonrush-web/public/products/about-image.png';
 
 export default function AboutPage() {
   return (
-    <div className="bg-white min-h-screen pb-16 sm:pb-0">
+    <div className="bg-white min-h-screen pb-20 sm:pb-0">
       {/* Hero Section */}
       <section className="pt-20 sm:pt-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">

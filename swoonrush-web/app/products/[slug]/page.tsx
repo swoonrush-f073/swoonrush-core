@@ -1,8 +1,8 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { MessageCircle } from 'lucide-react';
 
+import ProductActions from '@/components/ProductActions';
 import ProductGallery from '@/components/ProductGallery';
 import { CONTACT_INFO, PRODUCT_DETAIL_CONTENT, PRODUCTS } from '@/constants';
 import { formatPrice } from '@/utils/formatPrice';
@@ -43,14 +43,6 @@ export default async function ProductPage({
   if (!product) {
     notFound();
   }
-
-  const whatsappMessage = encodeURIComponent(
-    PRODUCT_DETAIL_CONTENT.whatsappMessageTemplate.replace(
-      '{productName}',
-      product.name,
-    ),
-  );
-  const whatsappUrl = `https://wa.me/${CONTACT_INFO.whatsapp}?text=${whatsappMessage}`;
 
   return (
     <div className="bg-white min-h-screen pt-14 sm:pt-12 pb-20">
@@ -128,52 +120,8 @@ export default async function ProductPage({
               </div>
             </div> */}
 
-            {/* The rest is client side sizing but we skip logic for static view */}
-            <div className="mb-8 opacity-70 pointer-events-none">
-              <p className="text-xs text-text-light mb-2">
-                {PRODUCT_DETAIL_CONTENT.labels.sizeSelectionEx}
-              </p>
-              <div className="grid grid-cols-5 gap-2">
-                {product.sizes.map((s) => (
-                  <div
-                    key={s}
-                    className="py-2 text-center border border-black/60 rounded-md text-sm"
-                  >
-                    {s}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Actions */}
-            <div className="flex flex-col gap-4 mt-auto">
-              {!product.inStock && (
-                <div className="bg-gray-100 text-gray-600 font-medium py-4 text-center rounded-xl mb-2">
-                  {PRODUCT_DETAIL_CONTENT.labels.outOfStock}
-                </div>
-              )}
-
-              <a
-                href={product.inStock ? whatsappUrl : '#'}
-                target={product.inStock ? '_blank' : undefined}
-                rel="noopener noreferrer"
-                className={`flex items-center justify-center gap-2 py-4 rounded-xl font-medium transition-all duration-300 shadow-md ${
-                  product.inStock
-                    ? 'bg-pink hover:bg-pink-dark text-white hover:shadow-lg hover:scale-[1.02]'
-                    : 'bg-beige-dark text-text-light cursor-not-allowed'
-                }`}
-              >
-                <MessageCircle size={20} />
-                {PRODUCT_DETAIL_CONTENT.labels.orderViaWhatsapp}
-              </a>
-
-              <a
-                href="/contact"
-                className="flex items-center justify-center gap-2 py-4 rounded-xl font-medium transition-all duration-300 bg-white border-2 border-beige-dark text-text-dark hover:border-pink hover:text-pink"
-              >
-                {PRODUCT_DETAIL_CONTENT.labels.inquireViaForm}
-              </a>
-            </div>
+            {/* Client-side Actions (Size Selection + WhatsApp) */}
+            <ProductActions product={product} />
 
             <div className="mt-8 text-sm text-text-light">
               <p className="flex items-center gap-2 mb-2">

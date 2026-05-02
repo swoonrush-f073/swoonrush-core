@@ -15,7 +15,7 @@ export default function ContactPage() {
   return (
     <div className="bg-beige min-h-screen py-16 pb-32 sm:pb-16">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center pt-3 sm:pt-0 mb-16">
           <h1 className="font-display text-4xl sm:text-5xl font-bold text-text-dark mb-4">
             {CONTACT_PAGE_CONTENT.header.title}
           </h1>

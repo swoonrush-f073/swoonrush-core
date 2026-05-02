@@ -41,12 +41,14 @@ const ProductCard: React.FC<ProductCardProps> = ({
               </span>
             </div>
           )}
-          {product.featured && product.inStock && product.originalPrice && product.originalPrice !== product.price && (
-            <div className="absolute top-3 right-3 bg-pink text-white px-3 py-1 rounded-full text-xs font-medium tracking-wider shadow-sm z-10">
-              {product.offerPercentage}% OFF
-            </div>
-          )}
-
+          {product.featured &&
+            product.inStock &&
+            product.originalPrice &&
+            product.originalPrice !== product.price && (
+              <div className="absolute top-3 right-3 bg-pink text-white px-3 py-1 rounded-full text-xs font-medium tracking-wider shadow-sm z-10">
+                {product.offerPercentage}% OFF
+              </div>
+            )}
         </div>
 
         {/* Product Info */}
@@ -61,11 +63,12 @@ const ProductCard: React.FC<ProductCardProps> = ({
             <span className="text-text-dark font-semibold">
               {formatPrice(product.price, product.currency)}
             </span>
-            {product.originalPrice && product.originalPrice !== product.price && (
-              <span className="text-text-light/70 text-sm line-through font-medium">
-                {formatPrice(product.originalPrice, product.currency)}
-              </span>
-            )}
+            {product.originalPrice &&
+              product.originalPrice !== product.price && (
+                <span className="text-text-light/70 text-sm line-through font-medium">
+                  {formatPrice(product.originalPrice, product.currency)}
+                </span>
+              )}
           </div>
         </div>
       </Link>

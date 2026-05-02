@@ -3,18 +3,27 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Home, ShoppingBag, Info, Mail, ChevronRight } from 'lucide-react';
+import { AnimatePresence, motion } from 'framer-motion';
+import {
+  ChevronRight,
+  Home,
+  Info,
+  Mail,
+  Menu,
+  ShoppingBag,
+  X,
+} from 'lucide-react';
 
 import { NAV_LINKS } from '@/constants';
 
-const SWOONRUSH_LOGO = 'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/refs/heads/main/swoonrush-web/public/swoonrush_logo.png';
+const SWOONRUSH_LOGO =
+  'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/refs/heads/main/swoonrush-web/public/swoonrush_logo.png';
 
 const navIcons = {
-  'Home': { icon: Home, desc: 'Return to home' },
-  'Shop': { icon: ShoppingBag, desc: 'Explore our collection' },
-  'About': { icon: Info, desc: 'Learn about our story' },
-  'Contact': { icon: Mail, desc: 'Say hello to us' },
+  Home: { icon: Home, desc: 'Return to home' },
+  Shop: { icon: ShoppingBag, desc: 'Explore our collection' },
+  About: { icon: Info, desc: 'Learn about our story' },
+  Contact: { icon: Mail, desc: 'Say hello to us' },
 };
 
 const SwoonRushNavbar: React.FC = () => {
@@ -28,7 +37,9 @@ const SwoonRushNavbar: React.FC = () => {
   }, []);
 
   return (
-    <nav className={`absolute top-0 left-0 right-0 z-50 transition-colors duration-300 bg-beige ${isScrolled ? ' shadow-sm border-b border-beige-dark' : ''}`}>
+    <nav
+      className={`absolute top-0 left-0 right-0 z-50 transition-colors duration-300 bg-beige ${isScrolled ? ' shadow-sm border-b border-beige-dark' : ''}`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16">
           {/* Hamburger Menu */}
@@ -69,13 +80,17 @@ const SwoonRushNavbar: React.FC = () => {
             ))}
           </div>
 
-           {/* Shopping Bag / Contact */}
+          {/* Shopping Bag / Contact */}
           <Link
             href="/contact"
             className="p-2 rounded-lg transition-colors relative md:hidden"
             aria-label="Mail"
           >
-            <img src="https://www.svgrepo.com/show/311892/cherry-blossom.svg" alt="Contact" className="w-6 h-6" />
+            <img
+              src="https://www.svgrepo.com/show/311892/cherry-blossom.svg"
+              alt="Contact"
+              className="w-6 h-6"
+            />
           </Link>
         </div>
       </div>
@@ -91,7 +106,10 @@ const SwoonRushNavbar: React.FC = () => {
           >
             <div className="flex flex-col gap-4 p-6 h-[calc(100vh-64px)] max-w-md mx-auto w-full">
               {NAV_LINKS.map((link, idx) => {
-                const info = navIcons[link.name as keyof typeof navIcons] || { icon: Home, desc: '' };
+                const info = navIcons[link.name as keyof typeof navIcons] || {
+                  icon: Home,
+                  desc: '',
+                };
                 const Icon = info.icon;
                 return (
                   <motion.div
