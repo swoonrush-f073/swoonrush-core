@@ -36,8 +36,8 @@ export const PRODUCTS: Product[] = [
     slug: 'lovely-runner-oversized',
     description:
       'Inspired by epic love stories. Soft, comfortable, and perfect for binge-watching your favorite series.',
-    price: 599,
-    originalPrice: 666,
+    price: 699,
+    originalPrice: 777,
     offerPercentage: 10,
     currency: 'INR',
     images: {
@@ -64,8 +64,8 @@ export const PRODUCTS: Product[] = [
     slug: 'team-gwan-sik-oversized',
     description:
       "Stay cozy like you're wrapped in a Drama moment. Premium fleece with aesthetic graphics.",
-    price: 666,
-    originalPrice: 666,
+    price: 777,
+    originalPrice: 777,
     offerPercentage: 0,
     currency: 'INR',
     images: {
