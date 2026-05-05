@@ -8,6 +8,7 @@ export interface Product {
   originalPrice?: number;
   offerPercentage?: number;
   images: {
+    both?: string;
     front: string;
     back?: string;
     detail?: string;
@@ -98,7 +99,7 @@ export const PRODUCTS: Product[] = [
       front:
         'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/tangerines/front.jpg',
       back: 'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/tangerines/back.jpg',
-      lifestyle: 'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/tangerines/both.jpg',
+      both: 'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/tangerines/both.jpg',
     },
     sizes: ['S', 'M', 'L', 'XL'],
     colors: [{ name: 'Black', hex: '#000000' }],

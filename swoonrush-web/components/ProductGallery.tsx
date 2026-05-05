@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 
 interface ProductGalleryProps {
   images: {
+    both?: string;
     front: string;
     back?: string;
     detail?: string;
@@ -23,6 +24,7 @@ const ProductGallery: React.FC<ProductGalleryProps> = ({
   const allImages = [
     images.front,
     images.back,
+    images.both,
     images.detail,
     images.lifestyle,
   ].filter(Boolean) as string[];
@@ -30,25 +32,60 @@ const ProductGallery: React.FC<ProductGalleryProps> = ({
   return (
     <div className="flex flex-col gap-4">
       {/* Main Image */}
-      <div className="relative max-h-[600px] aspect-[3/4] w-full bg-beige-light rounded-2xl overflow-hidden shadow-sm">
-        <AnimatePresence mode="wait">
+      <div className="relative max-h-[600px] aspect-[3/4] w-full bg-beige-light rounded-2xl overflow-hidden shadow-sm group">
+        <AnimatePresence mode="wait" initial={false}>
           <motion.div
             key={activeImage}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="absolute inset-0"
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -20 }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={0.2}
+            onDragEnd={(e, { offset, velocity }) => {
+              const swipe = offset.x;
+              const threshold = 50;
+              const currentIndex = allImages.indexOf(activeImage);
+
+              if (swipe < -threshold) {
+                // Swipe Left -> Next
+                const nextIndex = (currentIndex + 1) % allImages.length;
+                setActiveImage(allImages[nextIndex]);
+              } else if (swipe > threshold) {
+                // Swipe Right -> Prev
+                const prevIndex =
+                  (currentIndex - 1 + allImages.length) % allImages.length;
+                setActiveImage(allImages[prevIndex]);
+              }
+            }}
+            className="absolute inset-0 cursor-grab active:cursor-grabbing"
           >
             <Image
               src={activeImage}
               alt={alt}
               fill
-              className="object-cover"
+              className="object-cover pointer-events-none"
               priority
             />
           </motion.div>
         </AnimatePresence>
+
+        {/* Swipe Indicator Dots (Mobile Only) */}
+        {allImages.length > 1 && (
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 md:hidden">
+            {allImages.map((_, idx) => (
+              <div
+                key={idx}
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                  allImages.indexOf(activeImage) === idx
+                    ? 'bg-pink w-4'
+                    : 'bg-white/50'
+                }`}
+              />
+            ))}
+          </div>
+        )}
       </div>
 
       {/* Thumbnails */}

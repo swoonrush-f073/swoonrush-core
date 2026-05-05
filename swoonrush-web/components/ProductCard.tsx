@@ -34,7 +34,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
         {/* Image Container */}
         <div className="relative aspect-[3/4] overflow-hidden bg-beige-light rounded-2xl mb-4 shadow-sm group-hover:shadow-md transition-shadow duration-300">
           <Image
-            src={product.images.front}
+            src={product.images.both || product.images.front}
             alt={product.name}
             fill
             className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
