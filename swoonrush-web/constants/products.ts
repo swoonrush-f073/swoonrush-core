@@ -47,7 +47,7 @@ export const PRODUCTS: Product[] = [
       lifestyle:
         'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/lovely-runner-oversized/lifestyle.jpg',
     },
-    sizes: ['S', 'M', 'L'],
+    sizes: ['S', 'M', 'L', 'XL'],
     colors: [
       { name: 'Soft Pink', hex: '#E89CA9' },
       { name: 'Cream', hex: '#F7F5F3' },
@@ -73,7 +73,7 @@ export const PRODUCTS: Product[] = [
         'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/team-gwan-sik-oversized/front.jpg',
       back: 'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/team-gwan-sik-oversized/back.jpg',
     },
-    sizes: ['S', 'M', 'L'],
+    sizes: ['S', 'M', 'L', 'XL'],
     colors: [
       { name: 'Charcoal', hex: '#36454F' },
       { name: 'Beige', hex: '#F7F5F3' },
