@@ -90,14 +90,15 @@ export const PRODUCTS: Product[] = [
     slug: 'tangerines-oversized',
     description:
       'Bold street style graphic tee inspired by the neon lights of Seoul nights.',
-    price: 888,
-    originalPrice: 799,
+    price: 799,
+    originalPrice: 888,
     offerPercentage: 10,
     currency: 'INR',
     images: {
       front:
         'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/tangerines/front.jpg',
       back: 'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/tangerines/back.jpg',
+      lifestyle: 'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/tangerines/both.jpg',
     },
     sizes: ['S', 'M', 'L', 'XL'],
     colors: [{ name: 'Black', hex: '#000000' }],
