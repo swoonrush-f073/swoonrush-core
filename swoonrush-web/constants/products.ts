@@ -103,7 +103,7 @@ export const PRODUCTS: Product[] = [
     colors: [{ name: 'Black', hex: '#000000' }],
     material: '100% Premium Cotton',
     fit: 'Unisex Oversized Fit',
-    featured: false,
+    featured: true,
     inStock: true,
     category: 'graphics',
   },
