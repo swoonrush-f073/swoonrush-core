@@ -37,9 +37,9 @@ export const PRODUCTS: Product[] = [
     slug: 'lovely-runner-oversized',
     description:
       'Inspired by epic love stories. Soft, comfortable, and perfect for binge-watching your favorite series.',
-    price: 699,
-    originalPrice: 777,
-    offerPercentage: 10,
+    price: 649,
+    originalPrice: 749,
+    offerPercentage: 13,
     currency: 'INR',
     images: {
       front:
@@ -91,9 +91,9 @@ export const PRODUCTS: Product[] = [
     slug: 'tangerines-oversized',
     description:
       'Bold street style graphic tee inspired by the neon lights of Seoul nights.',
-    price: 799,
-    originalPrice: 888,
-    offerPercentage: 10,
+    price: 699,
+    originalPrice: 799,
+    offerPercentage: 12,
     currency: 'INR',
     images: {
       front:
