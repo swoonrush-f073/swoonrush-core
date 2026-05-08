@@ -35,37 +35,26 @@ const SizeSelector: React.FC<SizeSelectorProps> = ({
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              className="relative bg-white rounded-2xl shadow-2xl max-w-2xl w-full overflow-hidden z-10"
+              className="relative bg-white rounded-2xl shadow-2xl w-fit max-w-[95vw] overflow-hidden z-10"
             >
-              <div className="p-4 border-b flex justify-between items-center bg-beige-light/30">
-                <h3 className="font-display font-semibold text-text-dark">
-                  Size Chart
-                </h3>
                 <button
                   onClick={() => setIsModalOpen(false)}
-                  className="p-1 hover:bg-beige-dark/20 rounded-full transition-colors text-text-light hover:text-text-dark"
+                  className="p-1 absolute right-2 top-2 z-20 hover:bg-beige-dark/20 rounded-full transition-colors text-text-light hover:text-text-dark"
                 >
                   <X size={20} />
                 </button>
-              </div>
 
-              <div className="p-4 sm:p-8 bg-white overflow-auto max-h-[70vh]">
-                <div className="relative w-full aspect-[1/1.2] sm:aspect-[1.4/1]">
+              <div className="bg-white overflow-auto max-h-[70vh]">
+                <div className="relative">
                   <Image
-                    src="/products/size-chart.webp"
+                    src="/products/size-chart.PNG"
                     alt="Size Chart"
-                    fill
-                    className="object-contain"
+                    width={1024}
+                    height={1536}
+                    className="w-full h-auto max-h-[70vh] object-contain"
                     priority
                   />
                 </div>
-              </div>
-
-              <div className="p-4 bg-beige-light/30 border-t text-center">
-                <p className="text-[10px] sm:text-xs text-text-light italic">
-                  * All measurements are in inches. If you&apos;re between
-                  sizes, we recommend sizing up for an oversized fit.
-                </p>
               </div>
             </motion.div>
           </div>
