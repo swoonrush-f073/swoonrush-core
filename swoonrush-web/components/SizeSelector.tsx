@@ -37,12 +37,12 @@ const SizeSelector: React.FC<SizeSelectorProps> = ({
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
               className="relative bg-white rounded-2xl shadow-2xl w-fit max-w-[95vw] overflow-hidden z-10"
             >
-                <button
-                  onClick={() => setIsModalOpen(false)}
-                  className="p-1 absolute right-2 top-2 z-20 hover:bg-beige-dark/20 rounded-full transition-colors text-text-light hover:text-text-dark"
-                >
-                  <X size={20} />
-                </button>
+              <button
+                onClick={() => setIsModalOpen(false)}
+                className="p-1 absolute right-2 top-2 z-20 hover:bg-beige-dark/20 rounded-full transition-colors text-text-light hover:text-text-dark"
+              >
+                <X size={20} />
+              </button>
 
               <div className="bg-white overflow-auto max-h-[70vh]">
                 <div className="relative">

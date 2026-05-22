@@ -1,6 +1,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import { Layers, Ruler, Scissors, Shirt, Truck } from 'lucide-react';
 
 import ProductActions from '@/components/ProductActions';
 import ProductGallery from '@/components/ProductGallery';
@@ -55,13 +56,18 @@ export default async function ProductPage({
 
           {/* Right: Details */}
           <div className="flex flex-col">
-            <p className="text-text-light text-sm font-medium tracking-widest uppercase mb-2">
-              {product.category?.replace('-', ' ')}
-            </p>
+            <div className="flex justify-between items-center mb-2">
+              <p className="text-text-light text-sm font-medium tracking-widest uppercase">
+                {product.category?.replace('-', ' ')}
+              </p>
+              <span className="text-[10px] sm:text-xs font-semibold text-pink uppercase tracking-wider flex items-center gap-1.5 bg-pink/10 px-2.5 py-1 rounded-full border border-pink/20">
+                <Truck size={14} /> Free Delivery
+              </span>
+            </div>
             <h1 className="font-display text-3xl sm:text-4xl font-bold text-text-dark mb-4">
               {product.name}
             </h1>
-            <div className="flex items-center flex-wrap gap-3 mb-6">
+            <div className="flex items-center flex-wrap gap-3 mb-3">
               <span className="text-2xl font-bold text-text-dark">
                 {formatPrice(product.price, product.currency)}
               </span>
@@ -77,23 +83,11 @@ export default async function ProductPage({
               ) : null}
             </div>
 
-            <div className="prose prose-sm text-text-dark mb-8">
+            <div className="prose prose-sm text-text-dark">
+              {product?.subTitle && (
+                <p className="font-medium">{product.subTitle}</p>
+              )}
               <p>{product.description}</p>
-            </div>
-
-            <div className="space-y-4 mb-8">
-              <div className="flex text-sm">
-                <span className="font-medium text-text-dark w-24">
-                  {PRODUCT_DETAIL_CONTENT.labels.material}
-                </span>
-                <span className="text-text-light">{product.material}</span>
-              </div>
-              <div className="flex text-sm">
-                <span className="font-medium text-text-dark w-24">
-                  {PRODUCT_DETAIL_CONTENT.labels.fit}
-                </span>
-                <span className="text-text-light">{product.fit}</span>
-              </div>
             </div>
 
             {/* Colors */}
@@ -120,19 +114,89 @@ export default async function ProductPage({
               </div>
             </div> */}
 
+            {/* Key Highlights Section */}
+            <div className="border-t border-b border-beige-dark py-4 mt-4">
+              <h3 className="text-sm font-semibold text-text-dark uppercase tracking-wider mb-4">
+                Key Highlights
+              </h3>
+              <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-6">
+                <div className="bg-beige/40 rounded-xl p-3 flex flex-col sm:flex-row items-start gap-2 sm:gap-3">
+                  <div className="p-1.5 sm:p-2 bg-pink/10 rounded-lg text-pink shrink-0">
+                    <Shirt className="w-4 h-4 sm:w-5 sm:h-5" />
+                  </div>
+                  <div>
+                    <span className="block text-[10px] sm:text-[11px] font-medium text-text-light uppercase tracking-wider mb-1 sm:mb-0">
+                      Fit
+                    </span>
+                    <span className="text-xs sm:text-sm font-semibold text-text-dark leading-snug">
+                      {product.fit}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="bg-beige/40 rounded-xl p-3 flex flex-col sm:flex-row items-start gap-2 sm:gap-3">
+                  <div className="p-1.5 sm:p-2 bg-pink/10 rounded-lg text-pink shrink-0">
+                    <Layers className="w-4 h-4 sm:w-5 sm:h-5" />
+                  </div>
+                  <div>
+                    <span className="block text-[10px] sm:text-[11px] font-medium text-text-light uppercase tracking-wider mb-1 sm:mb-0">
+                      Fabric
+                    </span>
+                    <span className="text-xs sm:text-sm font-semibold text-text-dark leading-snug">
+                      {product.slug.includes('hoodie')
+                        ? product.material
+                        : `220 GSM Premium Cotton`}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="bg-beige/40 rounded-xl p-3 flex flex-col sm:flex-row items-start gap-2 sm:gap-3">
+                  <div className="p-1.5 sm:p-2 bg-pink/10 rounded-lg text-pink shrink-0">
+                    <Scissors className="w-4 h-4 sm:w-5 sm:h-5" />
+                  </div>
+                  <div>
+                    <span className="block text-[10px] sm:text-[11px] font-medium text-text-light uppercase tracking-wider mb-1 sm:mb-0">
+                      Neck
+                    </span>
+                    <span className="text-xs sm:text-sm font-semibold text-text-dark leading-snug">
+                      {product.slug.includes('hoodie')
+                        ? 'Hooded Neck'
+                        : 'Round Neck'}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="bg-beige/40 rounded-xl p-3 flex flex-col sm:flex-row items-start gap-2 sm:gap-3">
+                  <div className="p-1.5 sm:p-2 bg-pink/10 rounded-lg text-pink shrink-0">
+                    <Ruler className="w-4 h-4 sm:w-5 sm:h-5" />
+                  </div>
+                  <div>
+                    <span className="block text-[10px] sm:text-[11px] font-medium text-text-light uppercase tracking-wider mb-1 sm:mb-0">
+                      Sleeve
+                    </span>
+                    <span className="text-xs sm:text-sm font-semibold text-text-dark leading-snug">
+                      {product.slug.includes('hoodie')
+                        ? 'Long Sleeve'
+                        : 'Regular Sleeve'}
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-beige/30 border border-beige-dark/50 rounded-xl p-4 text-xs">
+                <span className="block font-semibold text-text-dark mb-1.5 uppercase tracking-wider text-[10px]">
+                  Wash Care
+                </span>
+                <p className="text-text-light leading-relaxed">
+                  Machine wash cold with mild detergent. Dry inside-out in
+                  shade. Do not iron directly on print. Avoid bleach and tumble
+                  drying. Flat dry to retain shape.
+                </p>
+              </div>
+            </div>
+
             {/* Client-side Actions (Size Selection + WhatsApp) */}
             <ProductActions product={product} />
-
-            <div className="mt-8 text-sm text-text-light">
-              <p className="flex items-center gap-2 mb-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-green-500"></span>
-                {PRODUCT_DETAIL_CONTENT.shippingInfo.worldwide}
-              </p>
-              <p className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-beige-dark"></span>
-                {PRODUCT_DETAIL_CONTENT.shippingInfo.standard}
-              </p>
-            </div>
           </div>
         </div>
       </div>

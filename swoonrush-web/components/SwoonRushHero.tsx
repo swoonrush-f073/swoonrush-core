@@ -22,18 +22,18 @@ const featureItems = [
 
 const SwoonRushHero: React.FC = () => {
   return (
-    <section className="relative h-dvh min-h-[800px] lg:min-h-[650px] bg-beige overflow-hidden flex flex-col">
+    <section className="relative h-dvh min-h-[800px] lg:min-h-[650px] bg-beige overflow-hidden flex flex-col hero-section">
       {/* Main hero area — grows to fill available space */}
       <div className="relative flex-1 flex flex-col lg:flex-row lg:items-stretch max-w-7xl mx-auto w-full px-5 sm:px-6">
         {/* ─── Text Column ─── */}
-        <div className="relative z-10 flex flex-col justify-start lg:justify-center lg:w-[45%] pt-24 sm:pt-28 lg:pt-0 pb-2 lg:pb-20">
+        <div className="relative z-10 flex flex-col justify-start lg:justify-center lg:w-[45%] pt-24 sm:pt-28 lg:pt-0 pb-2 lg:pb-20 hero-text-column">
           <div className="relative">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
             >
-              <h1 className="font-display text-[2.5rem] leading-[1.1] sm:text-5xl md:text-6xl lg:text-[4.5rem] font-bold text-text-dark">
+              <h1 className="font-display text-[2.5rem] leading-[1.1] sm:text-5xl md:text-6xl lg:text-[4.5rem] font-bold text-text-dark hero-heading">
                 {HERO_CONTENT.heading}
                 <br />
                 <span className="text-pink italic">
@@ -55,7 +55,7 @@ const SwoonRushHero: React.FC = () => {
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.4, delay: 0.5 }}
-            className="w-[60%] my-3 lg:my-4 flex flex-row justify-between items-center"
+            className="w-[60%] my-3 lg:my-4 flex flex-row justify-between items-center hero-heart"
           >
             <div className="w-full h-[0.5px] bg-black/50" />
             <Heart className="text-pink fill-pink mx-4" size={30} />
@@ -66,7 +66,7 @@ const SwoonRushHero: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-text-light text-sm sm:text-base lg:text-lg max-w-xs lg:max-w-sm leading-relaxed"
+            className="text-text-light text-sm sm:text-base lg:text-lg max-w-xs lg:max-w-sm leading-relaxed hero-subheading"
           >
             {HERO_CONTENT.subheading}
           </motion.p>
@@ -76,7 +76,7 @@ const SwoonRushHero: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="hidden lg:flex items-center gap-6 mt-6"
+            className="hidden lg:flex items-center gap-6 mt-6 hero-features"
           >
             {featureItems.map(({ icon: Icon, label }) => (
               <div
@@ -98,7 +98,7 @@ const SwoonRushHero: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="mt-6 lg:mt-8"
+            className="mt-6 lg:mt-8 hero-cta"
           >
             <Link
               href="/#products"
@@ -117,9 +117,9 @@ const SwoonRushHero: React.FC = () => {
           initial={{ opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="relative lg:w-[55%] flex-1 lg:flex-initial flex items-end justify-center lg:justify-end lg:self-stretch"
+          className="relative lg:w-[55%] flex-1 lg:flex-initial flex items-end justify-center lg:justify-end lg:self-stretch hero-image-column"
         >
-          <div className="relative w-full h-[50vh] sm:h-[50vh] lg:h-full min-h-[300px]">
+          <div className="relative w-full h-[50vh] sm:h-[50vh] lg:h-full min-h-[300px] hero-image-container">
             <Image
               src={HERO_IMAGE_URL}
               alt="Drama inspired fashion models wearing SwoonRush t-shirts"

@@ -59,13 +59,6 @@ const ProductActions: React.FC<ProductActionsProps> = ({ product }) => {
           <MessageCircle size={20} />
           {PRODUCT_DETAIL_CONTENT.labels.orderViaWhatsapp}
         </a>
-
-        <a
-          href="/contact"
-          className="flex items-center justify-center gap-2 py-4 rounded-xl font-medium transition-all duration-300 bg-white border-2 border-beige-dark text-text-dark hover:border-pink hover:text-pink"
-        >
-          {PRODUCT_DETAIL_CONTENT.labels.inquireViaForm}
-        </a>
       </div>
     </div>
   );

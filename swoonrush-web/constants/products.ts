@@ -2,6 +2,7 @@ export interface Product {
   id: string;
   name: string;
   slug: string;
+  subTitle?: string;
   description: string;
   price: number;
   currency: string;
@@ -35,8 +36,9 @@ export const PRODUCTS: Product[] = [
     id: '1',
     name: 'Lovely Runner Oversized T-Shirt',
     slug: 'lovely-runner-oversized',
+    subTitle: '선재야…💛☔️',
     description:
-      'Inspired by epic love stories. Soft, comfortable, and perfect for binge-watching your favorite series.',
+      'Carrying the warmth of a yellow umbrella and a love that crossed time itself. Inspired by the unforgettable moments of Lovely Runner, this tee is made for every fan who still melts hearing ‘Sun-jae-ya…’',
     price: 649,
     originalPrice: 749,
     offerPercentage: 13,
@@ -89,8 +91,9 @@ export const PRODUCTS: Product[] = [
     id: '3',
     name: 'Tangerines Oversized T-Shirt',
     slug: 'tangerines-oversized',
+    subTitle: 'When life gives you tangerines’ 🍊✨',
     description:
-      'Bold street style graphic tee inspired by the neon lights of Seoul nights.',
+      'This tee celebrates Gwan-sik and Ae-sun — a story of strong love, unwavering loyalty, and finding happiness even in life’s hardest moments. The native title ‘폭싹 속았수다’ printed on the back adds the heart of the series itself.',
     price: 699,
     originalPrice: 799,
     offerPercentage: 12,
