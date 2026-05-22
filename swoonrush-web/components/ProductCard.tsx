@@ -64,7 +64,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
           <h3 className="text-lg font-display font-semibold text-text-dark group-hover:text-pink transition-colors line-clamp-1">
             {product.name}
           </h3>
-          <div className="flex items-center justify-center gap-2 mt-1">
+          <div className="flex items-center justify-center gap-2 mt-1 font-price">
             <span className="text-text-dark font-semibold">
               {formatPrice(product.price, product.currency)}
             </span>

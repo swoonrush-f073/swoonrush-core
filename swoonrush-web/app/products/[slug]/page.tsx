@@ -67,7 +67,7 @@ export default async function ProductPage({
             <h1 className="font-display text-3xl sm:text-4xl font-bold text-text-dark mb-4">
               {product.name}
             </h1>
-            <div className="flex items-center flex-wrap gap-3 mb-3">
+            <div className="flex items-center flex-wrap gap-3 mb-3 font-price">
               <span className="text-2xl font-bold text-text-dark">
                 {formatPrice(product.price, product.currency)}
               </span>
