@@ -28,7 +28,10 @@ export default function ContactPage() {
           {/* Left: Contact Info */}
           <div className="space-y-10 order-2 lg:order-1">
             <ContactInfo />
+          </div>
 
+          {/* Right: Contact Form */}
+          <div className="order-1 lg:order-2">
             <div className="bg-white p-6 rounded-2xl border border-beige-dark shadow-sm">
               <h3 className="font-semibold text-text-dark mb-2">
                 {CONTACT_PAGE_CONTENT.howToOrder.title}
@@ -37,11 +40,7 @@ export default function ContactPage() {
                 {CONTACT_PAGE_CONTENT.howToOrder.description}
               </p>
             </div>
-          </div>
-
-          {/* Right: Contact Form */}
-          <div className="order-1 lg:order-2">
-            <ContactForm />
+            {/* <ContactForm /> */}
           </div>
         </div>
       </div>

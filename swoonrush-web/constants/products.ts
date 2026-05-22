@@ -164,4 +164,32 @@ export const PRODUCTS: Product[] = [
     inStock: true,
     category: 'patterns',
   },
+  {
+    id: '6',
+    name: 'Ultimate Fan Combo: Lovely Runner & Tangerines',
+    slug: 'ultimate-fan-combo',
+    subTitle: '2 Must-Have Drama Tees! 💛🍊',
+    description:
+      "Can't decide? Get both! Grab the iconic Lovely Runner 'Sun-jae-ya…' tee and the bold Tangerines '폭싹 속았수다' graphic tee in this exclusive combo offer. A match made for the ultimate Drama fan.",
+    price: 1199,
+    originalPrice: 1548,
+    offerPercentage: 22,
+    currency: 'INR',
+    images: {
+      front:
+        'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/tangerines/both.jpg',
+      back: 'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/lovely-runner-oversized/front.jpg',
+      both: 'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/lovely-runner-oversized/lifestyle.jpg',
+    },
+    sizes: ['S', 'M', 'L', 'XL'],
+    colors: [
+      { name: 'Soft Pink (Lovely)', hex: '#E89CA9' },
+      { name: 'Black (Tangerines)', hex: '#000000' },
+    ],
+    material: '100% Premium Cotton',
+    fit: 'Unisex Oversized Fit',
+    featured: true,
+    inStock: true,
+    category: 'combos',
+  },
 ];

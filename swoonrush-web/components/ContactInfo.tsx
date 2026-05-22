@@ -49,7 +49,7 @@ const ContactInfo: React.FC = () => {
               <p className="font-medium text-md">{CONTACT_INFO.email}</p>
             </div>
           </a>
-
+          {/* 
           <div className="flex items-start gap-4 text-text-dark">
             <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm">
               <MapPin size={20} className="text-pink" />
@@ -64,7 +64,7 @@ const ContactInfo: React.FC = () => {
                 {CONTACT_INFO.address.line2}
               </p>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
 

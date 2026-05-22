@@ -77,7 +77,7 @@ const ContactForm: React.FC = () => {
             />
           </div>
 
-          <div>
+          {/* <div>
             <label
               htmlFor="product"
               className="block text-sm font-medium text-text-dark mb-1"
@@ -90,7 +90,7 @@ const ContactForm: React.FC = () => {
               className="w-full px-4 py-3 rounded-xl border border-beige-dark bg-beige-light focus:outline-none focus:ring-2 focus:ring-pink focus:border-transparent transition-all"
               placeholder="e.g. Lovely Runner Oversized Tshirt"
             />
-          </div>
+          </div> */}
 
           <div>
             <label
