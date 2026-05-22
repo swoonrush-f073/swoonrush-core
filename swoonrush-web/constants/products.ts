@@ -178,7 +178,7 @@ export const PRODUCTS: Product[] = [
     currency: 'INR',
     images: {
       front:
-        'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/tangerines/both.jpg',
+        'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/tangerines/combo.jpg',
       back: 'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/lovely-runner-oversized/front.jpg',
       both: 'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/lovely-runner-oversized/lifestyle.jpg',
     },
