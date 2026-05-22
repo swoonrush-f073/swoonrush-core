@@ -103,6 +103,7 @@ export const PRODUCTS: Product[] = [
         'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/tangerines/front.jpg',
       back: 'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/tangerines/back.jpg',
       both: 'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/tangerines/both.jpg',
+      lifestyle: 'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/tangerines/lifestyle.jpg',
     },
     sizes: ['S', 'M', 'L', 'XL'],
     colors: [{ name: 'Black', hex: '#000000' }],
