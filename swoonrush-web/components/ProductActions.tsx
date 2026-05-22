@@ -22,7 +22,7 @@ const ProductActions: React.FC<ProductActionsProps> = ({ product }) => {
   );
   const whatsappUrl = `https://wa.me/${CONTACT_INFO.whatsapp}?text=${whatsappMessage}`;
 
-  const isEnabled = product.inStock && selectedSize !== '';
+  const isEnabled = product.inStock;
 
   return (
     <div className="flex flex-col h-full">
