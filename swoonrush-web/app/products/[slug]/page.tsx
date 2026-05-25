@@ -143,9 +143,7 @@ export default async function ProductPage({
                       Fabric
                     </span>
                     <span className="text-xs sm:text-sm font-semibold text-text-dark leading-snug">
-                      {product.slug.includes('hoodie')
-                        ? product.material
-                        : `220 GSM Premium Cotton`}
+                      {product?.material || `220 GSM Premium Cotton`}
                     </span>
                   </div>
                 </div>
