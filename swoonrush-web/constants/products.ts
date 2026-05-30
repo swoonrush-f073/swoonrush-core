@@ -116,18 +116,19 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: '4',
-    name: 'Reply 1988 Vintage Tee',
+    name: 'Masses of Emotion Oversized T-Shirt',
     slug: 'reply-1988-vintage-tee',
+    subTitle: 'No One Comes Into Your Life By Mistake',
     description:
-      'A nostalgic retro vibe for the classic Drama fans. Features a faded vintage print.',
+      'A tribute to the emotions we carry, hide, and grow through. Inspired by Eun-a’s belief that people are not just flesh and blood, but masses of emotions shaped over a lifetime.\n\nThe back print, “No One Comes Into Your Life By Mistake,” reflects one of the drama’s most comforting messages: every person we meet leaves something behind—a lesson, a memory, a moment of growth, or a reason to keep moving forward. Whether they stay briefly or forever, each connection becomes part of who we are.\n\nDesigned for those who feel deeply, love quietly, and keep trying anyway.',
     price: 32.99,
     originalPrice: 39.99,
     offerPercentage: 17,
     currency: 'USD',
     images: {
       front:
-        'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/reply-tee/front.jpg',
-      back: 'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/reply-tee/back.jpg',
+        'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/masses-of-emotion/front.jpg',
+      back: 'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/masses-of-emotion/back.jpg',
     },
     sizes: ['S', 'M', 'L', 'XL'],
     colors: [
@@ -135,7 +136,7 @@ export const PRODUCTS: Product[] = [
       { name: 'Navy', hex: '#001f3f' },
     ],
     material: '220 GSM Premium Cotton',
-    fit: 'Relaxed Fit',
+    fit: 'Unisex Oversized Fit',
     featured: false,
     inStock: true,
     category: 'basics',
