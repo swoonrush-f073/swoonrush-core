@@ -121,10 +121,10 @@ export const PRODUCTS: Product[] = [
     subTitle: 'No One Comes Into Your Life By Mistake',
     description:
       'A tribute to the emotions we carry, hide, and grow through. Inspired by Eun-a’s belief that people are not just flesh and blood, but masses of emotions shaped over a lifetime.\n\nThe back print, “No One Comes Into Your Life By Mistake,” reflects one of the drama’s most comforting messages: every person we meet leaves something behind—a lesson, a memory, a moment of growth, or a reason to keep moving forward. Whether they stay briefly or forever, each connection becomes part of who we are.\n\nDesigned for those who feel deeply, love quietly, and keep trying anyway.',
-    price: 32.99,
-    originalPrice: 39.99,
-    offerPercentage: 17,
-    currency: 'USD',
+    price: 699,
+    originalPrice: 799,
+    offerPercentage: 12,
+    currency: 'INR',
     images: {
       front:
         'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/masses-of-emotion/front.jpg',
@@ -148,10 +148,10 @@ export const PRODUCTS: Product[] = [
     subTitle: 'Heart That Skips A Beat',
     description:
       'A tribute to the love story that felt like a fairytale—where a shining star met someone from an ordinary world, and together they created something extraordinary.\n\nInspired by ThamePo, this design celebrates a romance that crossed different worlds, proving that love can find its way through fame, distance, and destiny. The back print, “Heart That Skips A Beat,” reflects the feeling Thame and Po gave fans with every glance, every moment, and every step of their journey together.\n\nThe front print features Wesley, a symbol of the WilliamEst fandom and the memories, laughter, and emotions shared along the way.\n\nDesigned for those who believe in impossible love stories, cherish every heartbeat, and know that sometimes the most beautiful fairytales begin when a star meets the earth.',
-    price: 44.99,
-    originalPrice: 59.99,
-    offerPercentage: 25,
-    currency: 'USD',
+    price: 699,
+    originalPrice: 799,
+    offerPercentage: 12,
+    currency: 'INR',
     images: {
       front:
         'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/star-meets-earth/front.jpg',
@@ -164,7 +164,7 @@ export const PRODUCTS: Product[] = [
     ],
     material: '220 GSM Premium Cotton',
     fit: 'Unisex Oversized Fit',
-    featured: false,
+    featured: true,
     inStock: true,
     category: 'patterns',
   },
@@ -195,29 +195,5 @@ export const PRODUCTS: Product[] = [
     featured: true,
     inStock: true,
     category: 'combos',
-  },
-  {
-    id: '7',
-    name: 'Masses of Emotion Oversized T-Shirt',
-    slug: 'masses-of-emotion',
-    subTitle: 'No One Comes Into Your Life By Mistake',
-    description:
-      'A tribute to the emotions we carry, hide, and grow through. Inspired by Eun-a’s belief that people are not just flesh and blood, but masses of emotions shaped over a lifetime.\n\nThe back print, “No One Comes Into Your Life By Mistake,” reflects one of the drama’s most comforting messages: every person we meet leaves something behind—a lesson, a memory, a moment of growth, or a reason to keep moving forward. Whether they stay briefly or forever, each connection becomes part of who we are.\n\nDesigned for those who feel deeply, love quietly, and keep trying anyway.',
-    price: 699,
-    originalPrice: 799,
-    offerPercentage: 12,
-    currency: 'INR',
-    images: {
-      front:
-        'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/masses-of-emotion/front.jpg',
-      back: 'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/masses-of-emotion/back.jpg',
-    },
-    sizes: ['S', 'M', 'L', 'XL'],
-    colors: [{ name: 'Cream', hex: '#F7F5F3' }],
-    material: '220 GSM Premium Cotton',
-    fit: 'Unisex Oversized Fit',
-    featured: true,
-    inStock: true,
-    category: 'kdrama-inspired',
   },
 ];
