@@ -5,7 +5,7 @@ import { Layers, Ruler, Scissors, Shirt, Truck } from 'lucide-react';
 
 import ProductActions from '@/components/ProductActions';
 import ProductGallery from '@/components/ProductGallery';
-import { PRODUCT_DETAIL_CONTENT, PRODUCTS } from '@/constants';
+import { PRODUCTS } from '@/constants';
 import { formatPrice } from '@/utils/formatPrice';
 
 export async function generateMetadata({

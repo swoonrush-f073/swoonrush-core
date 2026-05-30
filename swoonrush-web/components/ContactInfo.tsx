@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Mail, MapPin, MessageCircle, Phone } from 'lucide-react';
+import { Mail, MessageCircle, Phone } from 'lucide-react';
 
 import { CONTACT_INFO, CONTACT_PAGE_CONTENT, SOCIAL_MEDIA } from '@/constants';
 import { trackEvent } from '@/utils/analytics';

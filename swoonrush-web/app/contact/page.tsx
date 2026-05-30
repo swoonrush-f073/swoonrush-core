@@ -1,7 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
 
-import ContactForm from '@/components/ContactForm';
 import ContactInfo from '@/components/ContactInfo';
 import { CONTACT_PAGE_CONTENT } from '@/constants';
 
