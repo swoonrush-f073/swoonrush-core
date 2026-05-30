@@ -139,7 +139,7 @@ export const PRODUCTS: Product[] = [
     fit: 'Unisex Oversized Fit',
     featured: true,
     inStock: true,
-    category: 'basics',
+    category: 'kdrama-inspired',
   },
   {
     id: '5',
@@ -166,7 +166,7 @@ export const PRODUCTS: Product[] = [
     fit: 'Unisex Oversized Fit',
     featured: true,
     inStock: true,
-    category: 'patterns',
+    category: 'Thai-Drama-inspired',
   },
   {
     id: '6',
