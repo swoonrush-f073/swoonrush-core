@@ -194,4 +194,30 @@ export const PRODUCTS: Product[] = [
     inStock: true,
     category: 'combos',
   },
+  {
+    id: '7',
+    name: 'Masses of Emotion Oversized T-Shirt',
+    slug: 'masses-of-emotion',
+    subTitle: 'No One Comes Into Your Life By Mistake',
+    description:
+      'A tribute to the emotions we carry, hide, and grow through. Inspired by Eun-a’s belief that people are not just flesh and blood, but masses of emotions shaped over a lifetime.\n\nThe back print, “No One Comes Into Your Life By Mistake,” reflects one of the drama’s most comforting messages: every person we meet leaves something behind—a lesson, a memory, a moment of growth, or a reason to keep moving forward. Whether they stay briefly or forever, each connection becomes part of who we are.\n\nDesigned for those who feel deeply, love quietly, and keep trying anyway.',
+    price: 699,
+    originalPrice: 799,
+    offerPercentage: 12,
+    currency: 'INR',
+    images: {
+      front:
+        'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/masses-of-emotion/front.jpg',
+      back: 'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/masses-of-emotion/back.jpg',
+    },
+    sizes: ['S', 'M', 'L', 'XL'],
+    colors: [
+      { name: 'Cream', hex: '#F7F5F3' },
+    ],
+    material: '220 GSM Premium Cotton',
+    fit: 'Unisex Oversized Fit',
+    featured: true,
+    inStock: true,
+    category: 'kdrama-inspired',
+  },
 ];
