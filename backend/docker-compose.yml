@@ -1,0 +1,52 @@
+services:
+  backend:
+    build: .
+    container_name: swoonrush-backend
+    restart: unless-stopped
+    ports:
+      - "5001:5001"
+    environment:
+      - NODE_ENV=development
+      - PORT=5001
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_USERNAME=swoonrush
+      - DB_PASSWORD=swoonrush_secret
+      - DB_NAME=swoonrush_db
+      - JWT_SECRET=swoonrush-jwt-secret-dev-only
+      - JWT_REFRESH_SECRET=swoonrush-refresh-secret-dev-only
+      - JWT_EXPIRES_IN=15m
+      - JWT_REFRESH_EXPIRES_IN=7d
+      - FRONTEND_URL=http://localhost:3000
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - swoonrush-network
+
+  postgres:
+    image: postgres:16-alpine
+    container_name: swoonrush-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: swoonrush
+      POSTGRES_PASSWORD: swoonrush_secret
+      POSTGRES_DB: swoonrush_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U swoonrush -d swoonrush_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - swoonrush-network
+
+volumes:
+  pgdata:
+
+networks:
+  swoonrush-network:
+    driver: bridge

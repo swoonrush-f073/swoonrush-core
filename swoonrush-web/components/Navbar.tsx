@@ -12,8 +12,12 @@ import {
   Menu,
   ShoppingBag,
   X,
+  User,
+  LogOut,
 } from 'lucide-react';
 
+import { useAuth } from '@/contexts/AuthContext';
+import { useCart } from '@/contexts/CartContext';
 import { NAV_LINKS } from '@/constants';
 
 const SWOONRUSH_LOGO =
@@ -29,6 +33,8 @@ const navIcons = {
 const SwoonRushNavbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const { isAuthenticated, user, openAuthModal, logout } = useAuth();
+  const { openCart, items } = useCart();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 10);
@@ -78,20 +84,85 @@ const SwoonRushNavbar: React.FC = () => {
                 {link.name}
               </Link>
             ))}
+            {isAuthenticated && user?.role === 'admin' && (
+              <Link
+                href="/admin"
+                className={`text-sm font-medium uppercase tracking-wide transition-colors relative group ${
+                  isScrolled ? 'text-text-dark' : 'text-text-dark'
+                }`}
+              >
+                Admin
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-pink transition-all duration-300 group-hover:w-full"></span>
+              </Link>
+            )}
+            <div className="flex items-center space-x-4 border-l border-beige-dark pl-6 ml-2">
+              <button
+                onClick={openCart}
+                className="text-text-dark hover:text-pink transition-colors relative"
+                aria-label="Cart"
+              >
+                <ShoppingBag size={20} />
+                {items.length > 0 && (
+                  <span className="absolute -top-2 -right-2 bg-pink text-white text-[10px] font-bold h-4 w-4 rounded-full flex items-center justify-center">
+                    {items.length}
+                  </span>
+                )}
+              </button>
+              {isAuthenticated ? (
+                <div className="flex items-center space-x-4">
+                  <span className="text-sm font-medium text-text-dark">Hi, {user?.firstName}</span>
+                  <button
+                    onClick={logout}
+                    className="text-text-dark hover:text-pink transition-colors"
+                    aria-label="Logout"
+                  >
+                    <LogOut size={20} />
+                  </button>
+                </div>
+              ) : (
+                <button
+                  onClick={() => openAuthModal('login')}
+                  className="text-text-dark hover:text-pink transition-colors"
+                  aria-label="Login"
+                >
+                  <User size={20} />
+                </button>
+              )}
+            </div>
           </div>
 
-          {/* Shopping Bag / Contact */}
-          <Link
-            href="/contact"
-            className="p-2 rounded-lg transition-colors relative md:hidden"
-            aria-label="Mail"
-          >
-            <img
-              src="https://www.svgrepo.com/show/311892/cherry-blossom.svg"
-              alt="Contact"
-              className="w-6 h-6"
-            />
-          </Link>
+          {/* Mobile Actions */}
+          <div className="flex items-center space-x-3 md:hidden">
+            {isAuthenticated ? (
+              <button
+                onClick={logout}
+                className="p-2 rounded-lg transition-colors text-text-dark hover:text-pink"
+                aria-label="Logout"
+              >
+                <LogOut size={20} />
+              </button>
+            ) : (
+              <button
+                onClick={() => openAuthModal('login')}
+                className="p-2 rounded-lg transition-colors text-text-dark hover:text-pink"
+                aria-label="Login"
+              >
+                <User size={20} />
+              </button>
+            )}
+            <button
+              onClick={openCart}
+              className="p-2 rounded-lg transition-colors text-text-dark hover:text-pink relative"
+              aria-label="Cart"
+            >
+              <ShoppingBag size={20} />
+              {items.length > 0 && (
+                <span className="absolute top-1 right-1 bg-pink text-white text-[10px] font-bold h-4 w-4 rounded-full flex items-center justify-center border-2 border-beige">
+                  {items.length}
+                </span>
+              )}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -139,6 +210,32 @@ const SwoonRushNavbar: React.FC = () => {
                   </motion.div>
                 );
               })}
+              {isAuthenticated && user?.role === 'admin' && (
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: NAV_LINKS.length * 0.1 }}
+                >
+                  <Link
+                    href="/admin"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="flex items-center p-4 bg-white rounded-2xl shadow-sm border border-pink/10 hover:border-pink hover:shadow-md transition-all group w-full"
+                  >
+                    <div className="p-3 rounded-xl mr-4 transition-colors">
+                      <User className="w-6 h-6 text-pink group-hover:scale-110 transition-transform" />
+                    </div>
+                    <div className="flex flex-col items-start">
+                      <span className="text-text-dark font-display text-lg font-bold">
+                        Admin Dashboard
+                      </span>
+                      <span className="text-text-light text-xs font-medium">
+                        Manage products and orders
+                      </span>
+                    </div>
+                    <ChevronRight className="ml-auto w-5 h-5 text-pink/30 group-hover:text-pink group-hover:translate-x-1 transition-all" />
+                  </Link>
+                </motion.div>
+              )}
             </div>
           </motion.div>
         )}

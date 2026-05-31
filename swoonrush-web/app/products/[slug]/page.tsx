@@ -5,7 +5,7 @@ import { Layers, Ruler, Scissors, Shirt, Truck } from 'lucide-react';
 
 import ProductActions from '@/components/ProductActions';
 import ProductGallery from '@/components/ProductGallery';
-import { PRODUCTS } from '@/constants';
+import { getProductBySlug, getAllProducts } from '@/utils/fetchProducts';
 import { formatPrice } from '@/utils/formatPrice';
 
 export async function generateMetadata({
@@ -14,7 +14,7 @@ export async function generateMetadata({
   params: { slug: string };
 }): Promise<Metadata> {
   const { slug } = await params;
-  const product = PRODUCTS.find((p) => p.slug === slug);
+  const product = await getProductBySlug(slug);
 
   if (!product) return {};
 
@@ -28,7 +28,8 @@ export async function generateMetadata({
 }
 
 export async function generateStaticParams() {
-  return PRODUCTS.map((product) => ({
+  const products = await getAllProducts();
+  return products.map((product) => ({
     slug: product.slug,
   }));
 }
@@ -39,7 +40,7 @@ export default async function ProductPage({
   params: { slug: string };
 }) {
   const { slug } = await params;
-  const product = PRODUCTS.find((p) => p.slug === slug);
+  const product = await getProductBySlug(slug);
 
   if (!product) {
     notFound();

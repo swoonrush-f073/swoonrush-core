@@ -7,6 +7,10 @@ import './globals.css';
 
 import Footer from '@/components/Footer';
 import SwoonRushNavbar from '@/components/Navbar';
+import AuthModals from '@/components/AuthModals';
+import CartDrawer from '@/components/CartDrawer';
+import { AuthProvider } from '@/contexts/AuthContext';
+import { CartProvider } from '@/contexts/CartContext';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -46,11 +50,17 @@ export default function RootLayout({
         className="font-sans antialiased relative max-h-screen overflow-x-hidden overflow-y-hidden"
         suppressHydrationWarning
       >
-        <SwoonRushNavbar />
-        <main className="max-h-screen overflow-x-hidden overflow-y-scroll">
-          {children}
-        </main>
-        <Footer />
+        <AuthProvider>
+          <CartProvider>
+            <SwoonRushNavbar />
+            <AuthModals />
+            <CartDrawer />
+            <main className="max-h-screen overflow-x-hidden overflow-y-scroll">
+              {children}
+            </main>
+            <Footer />
+          </CartProvider>
+        </AuthProvider>
       </body>
     </html>
   );
