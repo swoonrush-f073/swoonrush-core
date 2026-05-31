@@ -129,6 +129,7 @@ export const PRODUCTS: Product[] = [
       front:
         'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/masses-of-emotion/front.jpg',
       back: 'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/masses-of-emotion/back.jpg',
+      lifestyle: 'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/masses-of-emotion/lifestyle.jpg',
     },
     sizes: ['S', 'M', 'L', 'XL'],
     colors: [
@@ -156,6 +157,7 @@ export const PRODUCTS: Product[] = [
       front:
         'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/star-meets-earth/front.jpg',
       back: 'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/star-meets-earth/back.jpg',
+      lifestyle: 'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/star-meets-earth/lifestyle.jpg',
     },
     sizes: ['S', 'M', 'L', 'XL'],
     colors: [
