@@ -110,14 +110,9 @@ const SwoonRushNavbar: React.FC = () => {
               </button>
               {isAuthenticated ? (
                 <div className="flex items-center space-x-4">
-                  <span className="text-sm font-medium text-text-dark">Hi, {user?.firstName}</span>
-                  <button
-                    onClick={logout}
-                    className="text-text-dark hover:text-pink transition-colors"
-                    aria-label="Logout"
-                  >
-                    <LogOut size={20} />
-                  </button>
+                  <Link href="/profile" className="text-sm font-medium text-text-dark hover:text-pink transition-colors">
+                    Hi, {user?.firstName}
+                  </Link>
                 </div>
               ) : (
                 <button
@@ -134,13 +129,22 @@ const SwoonRushNavbar: React.FC = () => {
           {/* Mobile Actions */}
           <div className="flex items-center space-x-3 md:hidden">
             {isAuthenticated ? (
-              <button
-                onClick={logout}
-                className="p-2 rounded-lg transition-colors text-text-dark hover:text-pink"
-                aria-label="Logout"
-              >
-                <LogOut size={20} />
-              </button>
+              <div className="flex items-center space-x-1">
+                <Link
+                  href="/profile"
+                  className="p-2 rounded-lg transition-colors text-text-dark hover:text-pink"
+                  aria-label="Profile"
+                >
+                  <User size={20} />
+                </Link>
+                <button
+                  onClick={logout}
+                  className="p-2 rounded-lg transition-colors text-text-dark hover:text-pink"
+                  aria-label="Logout"
+                >
+                  <LogOut size={20} />
+                </button>
+              </div>
             ) : (
               <button
                 onClick={() => openAuthModal('login')}

@@ -31,18 +31,63 @@ export const apiClient = {
       },
     };
 
-    const response = await fetch(url, config);
-    const data = await response.json();
+    let response = await fetch(url, config);
 
     if (!response.ok) {
-      if (response.status === 401 && requireAuth) {
-        // TODO: Handle token refresh logic here if needed
-        // For now, if we get 401, we might just want to let the UI handle logout
+      if (response.status === 401 && requireAuth && typeof window !== 'undefined') {
+        const refreshToken = localStorage.getItem('refreshToken');
+        if (refreshToken) {
+          try {
+            const refreshRes = await fetch(`${API_BASE_URL}/auth/refresh-token`, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ refreshToken }),
+            });
+
+            if (refreshRes.ok) {
+              const refreshData = await refreshRes.json();
+              const newAccessToken = refreshData.data.accessToken;
+
+              localStorage.setItem('accessToken', newAccessToken);
+              if (refreshData.data.refreshToken) {
+                localStorage.setItem('refreshToken', refreshData.data.refreshToken);
+              }
+
+              // Retry original request
+              const retryConfig = { ...config };
+              retryConfig.headers = {
+                ...retryConfig.headers,
+                Authorization: `Bearer ${newAccessToken}`,
+              };
+
+              const retryResponse = await fetch(url, retryConfig);
+              const retryData = await retryResponse.json().catch(() => ({}));
+
+              if (!retryResponse.ok) {
+                throw new Error(retryData.message || 'Something went wrong after retry');
+              }
+              return retryData;
+            } else {
+              // Refresh token is expired or invalid
+              localStorage.removeItem('accessToken');
+              localStorage.removeItem('refreshToken');
+              window.location.reload();
+            }
+          } catch (e) {
+            localStorage.removeItem('accessToken');
+            localStorage.removeItem('refreshToken');
+          }
+        } else {
+          // No refresh token available
+          localStorage.removeItem('accessToken');
+        }
       }
+
+      const data = await response.json().catch(() => ({}));
       throw new Error(data.message || 'Something went wrong');
     }
 
-    return data;
+    return await response.json();
   },
 
   get<T>(endpoint: string, options?: FetchOptions) {

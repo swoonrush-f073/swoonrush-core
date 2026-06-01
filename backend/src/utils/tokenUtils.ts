@@ -8,7 +8,7 @@ const JWT_EXPIRES_IN = process.env.JWT_EXPIRES_IN || '15m';
 const JWT_REFRESH_EXPIRES_IN = process.env.JWT_REFRESH_EXPIRES_IN || '7d';
 
 export const generateAccessToken = (userId: string, role: string): string => {
-  const options: SignOptions = { expiresIn: JWT_EXPIRES_IN as string & { __brand: 'StringValue' } };
+  const options: SignOptions = { expiresIn: JWT_EXPIRES_IN as any };
   return jwt.sign(
     { userId, role, type: 'access' } as JwtPayload & object,
     JWT_SECRET,
@@ -17,7 +17,7 @@ export const generateAccessToken = (userId: string, role: string): string => {
 };
 
 export const generateRefreshToken = (userId: string, role: string): string => {
-  const options: SignOptions = { expiresIn: JWT_REFRESH_EXPIRES_IN as string & { __brand: 'StringValue' } };
+  const options: SignOptions = { expiresIn: JWT_REFRESH_EXPIRES_IN as any };
   return jwt.sign(
     { userId, role, type: 'refresh' } as JwtPayload & object,
     JWT_REFRESH_SECRET,
