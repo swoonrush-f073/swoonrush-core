@@ -97,7 +97,7 @@ const ContactForm: React.FC = () => {
               htmlFor="message"
               className="block text-sm font-medium text-text-dark mb-1"
             >
-              Message *
+              Message 
             </label>
             <textarea
               id="message"
