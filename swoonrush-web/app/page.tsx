@@ -5,11 +5,18 @@ import Link from 'next/link';
 
 import ProductCard from '@/components/ProductCard';
 import SwoonRushHero from '@/components/SwoonRushHero';
-import { CONTACT_INFO, HOME_PAGE_CONTENT, PRODUCTS } from '@/constants';
+import { CONTACT_INFO, HOME_PAGE_CONTENT, Product } from '@/constants';
 import { trackEvent } from '@/utils/analytics';
+import { getAllProducts } from '@/utils/fetchProducts';
 
 export default function Home() {
-  const featuredProducts = PRODUCTS.filter((p) => p.featured);
+  const [featuredProducts, setFeaturedProducts] = React.useState<Product[]>([]);
+
+  React.useEffect(() => {
+    getAllProducts().then(products => {
+      setFeaturedProducts(products.filter(p => p.featured));
+    });
+  }, []);
 
   return (
     <div>

@@ -1,9 +1,10 @@
 'use client';
 
 import React, { useState } from 'react';
-import { MessageCircle } from 'lucide-react';
+import { MessageCircle, ShoppingBag } from 'lucide-react';
 
 import { CONTACT_INFO, Product, PRODUCT_DETAIL_CONTENT } from '@/constants';
+import { useCart } from '@/contexts/CartContext';
 
 import SizeSelector from './SizeSelector';
 
@@ -22,7 +23,29 @@ const ProductActions: React.FC<ProductActionsProps> = ({ product }) => {
   );
   const whatsappUrl = `https://wa.me/${CONTACT_INFO.whatsapp}?text=${whatsappMessage}`;
 
+  const { addItem } = useCart();
+  const [isAdding, setIsAdding] = useState(false);
+
   const isEnabled = product.inStock;
+
+  const handleAddToCart = async () => {
+    if (!selectedSize) {
+      alert('Please select a size'); // In a real app, use a toast notification
+      return;
+    }
+
+    setIsAdding(true);
+    await addItem({
+      productId: product.id || product.slug, // fallback to slug if id missing in static data
+      name: product.name,
+      price: product.price,
+      quantity: 1,
+      size: selectedSize,
+      image: product.images.front,
+      // Pass color if available in static data / selected, assuming default for now
+    });
+    setIsAdding(false);
+  };
 
   return (
     <div className="flex flex-col h-full">
@@ -41,24 +64,39 @@ const ProductActions: React.FC<ProductActionsProps> = ({ product }) => {
           </div>
         )}
 
-        <a
-          href={isEnabled ? whatsappUrl : '#'}
-          target={isEnabled ? '_blank' : undefined}
-          rel="noopener noreferrer"
-          onClick={(e) => {
-            if (!isEnabled) {
-              e.preventDefault();
-            }
-          }}
-          className={`flex items-center justify-center gap-2 py-4 rounded-xl font-medium transition-all duration-300 shadow-md ${
-            isEnabled
-              ? 'bg-pink hover:bg-pink-dark text-white hover:shadow-lg hover:scale-[1.02]'
-              : 'bg-beige-dark text-text-light cursor-not-allowed opacity-60 grayscale-[0.5]'
-          }`}
-        >
-          <MessageCircle size={20} />
-          {PRODUCT_DETAIL_CONTENT.labels.orderViaWhatsapp}
-        </a>
+        <div className="flex flex-col sm:flex-row gap-3">
+          <button
+            onClick={handleAddToCart}
+            disabled={!isEnabled || isAdding}
+            className={`flex-1 flex items-center justify-center gap-2 py-4 rounded-xl font-medium transition-all duration-300 shadow-md ${
+              isEnabled && !isAdding
+                ? 'bg-text-dark hover:bg-black text-white hover:shadow-lg hover:scale-[1.02]'
+                : 'bg-beige-dark text-text-light cursor-not-allowed opacity-60 grayscale-[0.5]'
+            }`}
+          >
+            <ShoppingBag size={20} />
+            {isAdding ? 'Adding...' : 'Add to Cart'}
+          </button>
+
+          <a
+            href={isEnabled ? whatsappUrl : '#'}
+            target={isEnabled ? '_blank' : undefined}
+            rel="noopener noreferrer"
+            onClick={(e) => {
+              if (!isEnabled) {
+                e.preventDefault();
+              }
+            }}
+            className={`flex-1 flex items-center justify-center gap-2 py-4 rounded-xl font-medium transition-all duration-300 shadow-md ${
+              isEnabled
+                ? 'bg-pink hover:bg-pink-dark text-white hover:shadow-lg hover:scale-[1.02]'
+                : 'bg-beige-dark text-text-light cursor-not-allowed opacity-60 grayscale-[0.5]'
+            }`}
+          >
+            <MessageCircle size={20} />
+            {PRODUCT_DETAIL_CONTENT.labels.orderViaWhatsapp}
+          </a>
+        </div>
       </div>
     </div>
   );

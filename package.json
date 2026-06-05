@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "npm run dev --prefix swoonrush-web",
+    "dev:be": "npm run dev --prefix backend",
     "build": "npm run build --prefix swoonrush-web",
+    "build:be": "npm run build --prefix backend",
     "start": "npm run start --prefix swoonrush-web",
     "lint": "npm run lint --prefix swoonrush-web",
     "format": "npm run format --prefix swoonrush-web"
