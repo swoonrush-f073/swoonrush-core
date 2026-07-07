@@ -8,6 +8,7 @@ export interface Product {
   currency: string;
   originalPrice?: number;
   offerPercentage?: number;
+  isOldSizeChart?: boolean;
   images: {
     both?: string;
     front: string;
@@ -42,6 +43,7 @@ export const PRODUCTS: Product[] = [
     price: 649,
     originalPrice: 749,
     offerPercentage: 13,
+    isOldSizeChart: true,
     currency: 'INR',
     images: {
       front:
@@ -97,6 +99,7 @@ export const PRODUCTS: Product[] = [
     price: 699,
     originalPrice: 799,
     offerPercentage: 12,
+    isOldSizeChart: true,
     currency: 'INR',
     images: {
       front:
