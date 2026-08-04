@@ -193,7 +193,7 @@ export const PRODUCTS: Product[] = [
     },
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
     colors: [{ name: 'Red', hex: '#C0392B' }],
-    material: '220 GSM Premium Cotton',
+    material: '250 GSM French Terry',
     fit: 'Unisex Oversized Fit',
     featured: true,
     inStock: true,
