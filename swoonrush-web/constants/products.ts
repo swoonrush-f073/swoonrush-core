@@ -9,6 +9,7 @@ export interface Product {
   originalPrice?: number;
   offerPercentage?: number;
   isOldSizeChart?: boolean;
+  sizeChartImage?: string;
   images: {
     both?: string;
     front: string;
@@ -168,6 +169,31 @@ export const PRODUCTS: Product[] = [
       { name: 'Gray', hex: '#808080' },
     ],
     material: '250 GSM French Terry',
+    fit: 'Unisex Oversized Fit',
+    featured: true,
+    inStock: false,
+    category: 'Thai-Drama-inspired',
+  },
+  {
+    id: '7',
+    name: 'Khun Thee Oversized T-Shirt',
+    slug: 'khun-thee-oversized',
+    subTitle: 'Raatri sawat na, Khon due 🎵🐻',
+    description:
+      'For the one who stays up late, who feels too much, and loves even harder. Inspired by the story of Khun Thee and Lookpeach — this tee carries the signature "Theerakit K.lee" on the front, paired with the memorable moments from Me and Thee. A tribute to the fans who obsessed with Khun Thee.',
+    price: 699,
+    originalPrice: 799,
+    offerPercentage: 12,
+    currency: 'INR',
+    sizeChartImage: '/products/size-chart-02.jpg',
+    images: {
+      front:
+        'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/khun-thee-oversized/front.jpg',
+      back: 'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/khun-thee-oversized/back.jpg',
+    },
+    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+    colors: [{ name: 'Red', hex: '#C0392B' }],
+    material: '220 GSM Premium Cotton',
     fit: 'Unisex Oversized Fit',
     featured: true,
     inStock: true,

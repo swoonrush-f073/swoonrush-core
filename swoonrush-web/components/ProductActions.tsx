@@ -31,6 +31,7 @@ const ProductActions: React.FC<ProductActionsProps> = ({ product }) => {
         sizes={product.sizes}
         selectedSize={selectedSize}
         isOldSizeChart={product?.isOldSizeChart}
+        sizeChartImage={product?.sizeChartImage}
         onSizeSelect={setSelectedSize}
       />
 

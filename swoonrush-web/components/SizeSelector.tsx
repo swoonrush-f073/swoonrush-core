@@ -8,6 +8,7 @@ import { X } from 'lucide-react';
 interface SizeSelectorProps {
   sizes: string[];
   isOldSizeChart?: boolean;
+  sizeChartImage?: string;
   selectedSize: string;
   onSizeSelect: (size: string) => void;
 }
@@ -16,6 +17,7 @@ const SizeSelector: React.FC<SizeSelectorProps> = ({
   sizes,
   selectedSize,
   isOldSizeChart = false,
+  sizeChartImage,
   onSizeSelect,
 }: SizeSelectorProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -49,7 +51,7 @@ const SizeSelector: React.FC<SizeSelectorProps> = ({
               <div className="bg-white overflow-auto max-h-[70vh]">
                 <div className="relative">
                   <Image
-                    src={isOldSizeChart? "/products/size-chart-01.PNG": "/products/size-chart.PNG"}
+                    src={sizeChartImage ?? (isOldSizeChart ? "/products/size-chart-01.PNG" : "/products/size-chart.PNG")}
                     alt="Size Chart"
                     width={1024}
                     height={1536}
