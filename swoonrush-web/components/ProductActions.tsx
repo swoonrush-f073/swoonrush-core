@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { MessageCircle } from 'lucide-react';
+import { Bell, MessageCircle } from 'lucide-react';
 
 import { CONTACT_INFO, Product, PRODUCT_DETAIL_CONTENT } from '@/constants';
 
@@ -14,15 +14,22 @@ interface ProductActionsProps {
 const ProductActions: React.FC<ProductActionsProps> = ({ product }) => {
   const [selectedSize, setSelectedSize] = useState<string>('');
 
-  const whatsappMessage = encodeURIComponent(
+  const whatsappOrderMessage = encodeURIComponent(
     PRODUCT_DETAIL_CONTENT.whatsappMessageTemplate.replace(
       '{productName}',
       product.name,
     ) + (selectedSize ? ` (Size: ${selectedSize})` : ''),
   );
-  const whatsappUrl = `https://wa.me/${CONTACT_INFO.whatsapp}?text=${whatsappMessage}`;
 
-  const isEnabled = product.inStock;
+  const whatsappInterestMessage = encodeURIComponent(
+    PRODUCT_DETAIL_CONTENT.interestMessageTemplate.replace(
+      '{productName}',
+      product.name,
+    ) + (selectedSize ? ` (Preferred Size: ${selectedSize})` : ''),
+  );
+
+  const whatsappOrderUrl = `https://wa.me/${CONTACT_INFO.whatsapp}?text=${whatsappOrderMessage}`;
+  const whatsappInterestUrl = `https://wa.me/${CONTACT_INFO.whatsapp}?text=${whatsappInterestMessage}`;
 
   return (
     <div className="flex flex-col h-full">
@@ -36,31 +43,39 @@ const ProductActions: React.FC<ProductActionsProps> = ({ product }) => {
       />
 
       {/* Actions */}
-      <div className="flex flex-col gap-4 mt-8">
-        {!product.inStock && (
-          <div className="bg-gray-100 text-gray-600 font-medium py-4 text-center rounded-xl mb-2">
-            {PRODUCT_DETAIL_CONTENT.labels.outOfStock}
-          </div>
-        )}
+      <div className="flex flex-col gap-3 mt-8">
+        {product.inStock ? (
+          <a
+            href={whatsappOrderUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2 py-4 rounded-xl font-medium transition-all duration-300 shadow-md bg-pink hover:bg-pink-dark text-white hover:shadow-lg hover:scale-[1.02]"
+          >
+            <MessageCircle size={20} />
+            {PRODUCT_DETAIL_CONTENT.labels.orderViaWhatsapp}
+          </a>
+        ) : (
+          <>
+            <div className="flex items-center justify-center gap-2 bg-gray-100 text-gray-500 font-medium py-3.5 text-center rounded-xl border border-gray-200">
+              <span className="inline-block w-2 h-2 rounded-full bg-red-400 animate-pulse" />
+              {PRODUCT_DETAIL_CONTENT.labels.outOfStock}
+            </div>
 
-        <a
-          href={isEnabled ? whatsappUrl : '#'}
-          target={isEnabled ? '_blank' : undefined}
-          rel="noopener noreferrer"
-          onClick={(e) => {
-            if (!isEnabled) {
-              e.preventDefault();
-            }
-          }}
-          className={`flex items-center justify-center gap-2 py-4 rounded-xl font-medium transition-all duration-300 shadow-md ${
-            isEnabled
-              ? 'bg-pink hover:bg-pink-dark text-white hover:shadow-lg hover:scale-[1.02]'
-              : 'bg-beige-dark text-text-light cursor-not-allowed opacity-60 grayscale-[0.5]'
-          }`}
-        >
-          <MessageCircle size={20} />
-          {PRODUCT_DETAIL_CONTENT.labels.orderViaWhatsapp}
-        </a>
+            <a
+              href={whatsappInterestUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 py-4 rounded-xl font-medium transition-all duration-300 shadow-md bg-amber-500 hover:bg-amber-600 text-white hover:shadow-lg hover:scale-[1.02]"
+            >
+              <Bell size={20} />
+              {PRODUCT_DETAIL_CONTENT.labels.sendInterest}
+            </a>
+
+            <p className="text-center text-xs text-text-light leading-relaxed px-2">
+              Let us know you&apos;re interested — we&apos;ll notify you as soon as it&apos;s back in stock! 🔔
+            </p>
+          </>
+        )}
       </div>
     </div>
   );

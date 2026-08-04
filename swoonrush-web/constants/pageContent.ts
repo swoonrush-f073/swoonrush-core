@@ -54,6 +54,7 @@ export const PRODUCT_DETAIL_CONTENT = {
     outOfStock: 'Currently Out of Stock',
     orderViaWhatsapp: 'Order via WhatsApp',
     inquireViaForm: 'Inquire via Form',
+    sendInterest: 'Send Interest via WhatsApp',
   },
   shippingInfo: {
     worldwide: 'Ships worldwide from our studio',
@@ -61,6 +62,8 @@ export const PRODUCT_DETAIL_CONTENT = {
   },
   whatsappMessageTemplate:
     "Hi! I'm interested in the {productName}. Can you help me place an order?",
+  interestMessageTemplate:
+    "Hi! I'm interested in the {productName} which is currently out of stock. Please notify me when it becomes available! 🙏",
 };
 
 export const HOME_PAGE_CONTENT = {
