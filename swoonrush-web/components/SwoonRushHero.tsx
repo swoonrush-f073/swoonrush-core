@@ -23,7 +23,7 @@ const featureItems = [
 const SwoonRushHero: React.FC = () => {
   return (
     <section className="relative h-dvh min-h-[800px] lg:min-h-[650px] bg-beige overflow-hidden flex flex-col hero-section">
-      {/* Main hero area — grows to fill available space */}
+      {/* Main hero area — grows to fill available space 1 */}
       <div className="relative flex-1 flex flex-col lg:flex-row lg:items-stretch max-w-7xl mx-auto w-full px-5 sm:px-6">
         {/* ─── Text Column ─── */}
         <div className="relative z-10 flex flex-col justify-start lg:justify-center lg:w-[45%] pt-24 sm:pt-28 lg:pt-0 pb-2 lg:pb-20 hero-text-column">
