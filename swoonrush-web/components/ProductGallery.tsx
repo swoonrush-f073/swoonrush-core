@@ -6,11 +6,11 @@ import { AnimatePresence, motion } from 'framer-motion';
 
 interface ProductGalleryProps {
   images: {
-    both?: string;
+    both?: string | null;
     front: string;
-    back?: string;
-    detail?: string;
-    lifestyle?: string;
+    back?: string | null;
+    detail?: string | null;
+    lifestyle?: string | null;
   };
   alt: string;
 }

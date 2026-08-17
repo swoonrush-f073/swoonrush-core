@@ -5,7 +5,7 @@ import { Layers, Ruler, Scissors, Shirt, Truck } from 'lucide-react';
 
 import ProductActions from '@/components/ProductActions';
 import ProductGallery from '@/components/ProductGallery';
-import { PRODUCTS } from '@/constants';
+import { getProduct, getProducts } from '@/lib/api';
 import { formatPrice } from '@/utils/formatPrice';
 
 export async function generateMetadata({
@@ -14,7 +14,7 @@ export async function generateMetadata({
   params: { slug: string };
 }): Promise<Metadata> {
   const { slug } = await params;
-  const product = PRODUCTS.find((p) => p.slug === slug);
+  const product = await getProduct(slug);
 
   if (!product) return {};
 
@@ -28,7 +28,8 @@ export async function generateMetadata({
 }
 
 export async function generateStaticParams() {
-  return PRODUCTS.map((product) => ({
+  const products = await getProducts();
+  return products.map((product) => ({
     slug: product.slug,
   }));
 }
@@ -39,7 +40,7 @@ export default async function ProductPage({
   params: { slug: string };
 }) {
   const { slug } = await params;
-  const product = PRODUCTS.find((p) => p.slug === slug);
+  const product = await getProduct(slug);
 
   if (!product) {
     notFound();
@@ -89,30 +90,6 @@ export default async function ProductPage({
               )}
               <p>{product.description}</p>
             </div>
-
-            {/* Colors */}
-            {/* <div className="mb-6">
-              <h4 className="text-sm font-medium text-text-dark mb-3">
-                {PRODUCT_DETAIL_CONTENT.labels.availableColors}
-              </h4>
-              <div className="flex gap-3">
-                {product.colors.map((color) => (
-                  <div
-                    key={color.name}
-                    className="flex flex-col items-center gap-1"
-                  >
-                    <div
-                      className="w-8 h-8 rounded-full border border-beige-dark shadow-sm"
-                      style={{ backgroundColor: color.hex }}
-                      title={color.name}
-                    />
-                    <span className="text-[10px] text-text-light">
-                      {color.name}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div> */}
 
             {/* Key Highlights Section */}
             <div className="border-t border-b border-beige-dark py-4 mt-4">
