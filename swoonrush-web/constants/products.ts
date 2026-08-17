@@ -135,7 +135,7 @@ export const PRODUCTS: Product[] = [
       back: 'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/masses-of-emotion/back.jpg',
       lifestyle: 'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/masses-of-emotion/lifestyle.jpg',
     },
-    sizes: ['S', 'M', 'L', 'XL'],
+    sizes: ['XS','S', 'M', 'L', 'XL'],
     colors: [
       { name: 'Cream', hex: '#F7F5F3' },
       { name: 'Navy', hex: '#001f3f' },
@@ -163,7 +163,7 @@ export const PRODUCTS: Product[] = [
       back: 'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/star-meets-earth/back.jpg',
       lifestyle: 'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/star-meets-earth/lifestyle.jpg',
     },
-    sizes: ['S', 'M', 'L', 'XL'],
+    sizes: ['XS','S', 'M', 'L', 'XL'],
     colors: [
       { name: 'Beige', hex: '#F7F5F3' },
       { name: 'Gray', hex: '#808080' },
@@ -191,7 +191,7 @@ export const PRODUCTS: Product[] = [
         'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/khun-thee-oversized/front.jpg',
       back: 'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/khun-thee-oversized/back.jpg',
     },
-    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+    sizes: ['XS','S', 'M', 'L', 'XL', 'XXL'],
     colors: [{ name: 'Red', hex: '#C0392B' }],
     material: '250 GSM French Terry',
     fit: 'Unisex Oversized Fit',
