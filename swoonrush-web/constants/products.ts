@@ -172,7 +172,7 @@ export const PRODUCTS: Product[] = [
       back: 'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/star-meets-earth/back.jpg',
       lifestyle: 'https://raw.githubusercontent.com/swoonrush-f073/swoonrush-core/main/swoonrush-web/public/products/star-meets-earth/lifestyle.jpg',
     },
-    sizes: { XS: false, S: false, M: true, L: false, XL: false, XXL: false },
+    sizes: { XS: false, S: true, M: true, L: true, XL: true, XXL: false },
     colors: [
       { name: 'Beige', hex: '#F7F5F3' },
       { name: 'Gray', hex: '#808080' },
